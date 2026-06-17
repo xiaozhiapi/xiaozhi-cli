@@ -1,5 +1,5 @@
 /**
- * Tests for the local XIAOZHI2 control-pane state projection.
+ * Tests for the local XIAOZHI control-pane state projection.
  */
 
 const assert = require('assert');
@@ -27,7 +27,7 @@ async function test(name, fn) {
   }
 }
 
-async function writeSampleXiaozhi2Database(dbPath) {
+async function writeSampleXiaozhiDatabase(dbPath) {
   const SQL = await initSqlJs();
   const db = new SQL.Database();
 
@@ -287,7 +287,7 @@ async function writeSampleWorkItemsDatabase(dbPath) {
     '/repo/xiaozhi',
     null,
     JSON.stringify({
-      branch: 'product/xiaozhi2-knowledge-control-pane',
+      branch: 'product/xiaozhi-knowledge-control-pane',
       mergeStateStatus: 'CLEAN',
     }),
     '2026-06-03T13:00:00Z',
@@ -335,12 +335,12 @@ async function runTests() {
   let passed = 0;
   let failed = 0;
 
-  if (await test('builds an operator snapshot from XIAOZHI2 SQLite and configured connectors', async () => {
+  if (await test('builds an operator snapshot from XIAOZHI SQLite and configured connectors', async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'xiaozhi-control-pane-state-'));
-    const dbPath = path.join(tempDir, 'xiaozhi2.db');
+    const dbPath = path.join(tempDir, 'xiaozhi.db');
 
     try {
-      await writeSampleXiaozhi2Database(dbPath);
+      await writeSampleXiaozhiDatabase(dbPath);
       const snapshot = await buildControlPaneSnapshot({
         dbPath,
         repoRoot: path.join(__dirname, '..', '..'),
@@ -382,11 +382,11 @@ async function runTests() {
 
   if (await test('projects state-store work items into agent Kanban summary', async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'xiaozhi-control-pane-work-items-'));
-    const dbPath = path.join(tempDir, 'xiaozhi2.db');
+    const dbPath = path.join(tempDir, 'xiaozhi.db');
     const stateDbPath = path.join(tempDir, 'state.db');
 
     try {
-      await writeSampleXiaozhi2Database(dbPath);
+      await writeSampleXiaozhiDatabase(dbPath);
       await writeSampleWorkItemsDatabase(stateDbPath);
 
       const snapshot = await buildControlPaneSnapshot({
@@ -416,11 +416,11 @@ async function runTests() {
 
   if (await test('treats an unreadable optional state-store database as empty work items', async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'xiaozhi-control-pane-corrupt-work-items-'));
-    const dbPath = path.join(tempDir, 'xiaozhi2.db');
+    const dbPath = path.join(tempDir, 'xiaozhi.db');
     const stateDbPath = path.join(tempDir, 'corrupt-state.db');
 
     try {
-      await writeSampleXiaozhi2Database(dbPath);
+      await writeSampleXiaozhiDatabase(dbPath);
       fs.writeFileSync(stateDbPath, 'not a sqlite database', 'utf8');
 
       const snapshot = await buildControlPaneSnapshot({
@@ -441,7 +441,7 @@ async function runTests() {
   if (await test('resolves config from explicit db path and TOML connector file', async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'xiaozhi-control-pane-config-'));
     const dbPath = path.join(tempDir, 'state.db');
-    const configPath = path.join(tempDir, 'xiaozhi2.toml');
+    const configPath = path.join(tempDir, 'xiaozhi.toml');
 
     try {
       fs.writeFileSync(
@@ -475,7 +475,7 @@ async function runTests() {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'xiaozhi-control-pane-precedence-'));
     const homeDir = path.join(tempDir, 'home');
     const homeConfigDir = path.join(homeDir, '.claude');
-    const appConfigDir = path.join(homeDir, 'Library', 'Application Support', 'xiaozhi2');
+    const appConfigDir = path.join(homeDir, 'Library', 'Application Support', 'xiaozhi');
     const homeDbPath = path.join(tempDir, 'operator.db');
     const staleDbPath = path.join(tempDir, 'stale-smoke.db');
 
@@ -488,7 +488,7 @@ async function runTests() {
         'utf8'
       );
       fs.writeFileSync(
-        path.join(homeConfigDir, 'xiaozhi2.toml'),
+        path.join(homeConfigDir, 'xiaozhi.toml'),
         `db_path = "${homeDbPath.replace(/\\/g, '\\\\')}"\n`,
         'utf8'
       );
@@ -531,7 +531,7 @@ async function runTests() {
     }
   })) passed++; else failed++;
 
-  if (await test('handles an existing SQLite database before XIAOZHI2 tables are created', async () => {
+  if (await test('handles an existing SQLite database before XIAOZHI tables are created', async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'xiaozhi-control-pane-empty-db-'));
     const dbPath = path.join(tempDir, 'empty.db');
 
@@ -616,10 +616,10 @@ async function runTests() {
 
   if (await test('handles malformed JSON rows and all session state counters', async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'xiaozhi-control-pane-edge-db-'));
-    const dbPath = path.join(tempDir, 'xiaozhi2.db');
+    const dbPath = path.join(tempDir, 'xiaozhi.db');
 
     try {
-      await writeSampleXiaozhi2Database(dbPath);
+      await writeSampleXiaozhiDatabase(dbPath);
       await mutateSqlDatabase(dbPath, db => {
         const insertSession = db.prepare(`
           INSERT INTO sessions (

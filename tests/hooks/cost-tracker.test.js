@@ -172,7 +172,7 @@ function runTests() {
     fs.rmSync(tmpHome, { recursive: true, force: true });
   }) ? passed++ : failed++);
 
-  // 6. Prefers XIAOZHI_SESSION_ID for XIAOZHI2 session correlation
+  // 6. Prefers XIAOZHI_SESSION_ID for XIAOZHI session correlation
   (test('prefers XIAOZHI_SESSION_ID over CLAUDE_SESSION_ID when both are present', () => {
     const tmpHome = makeTempDir();
     const input = {

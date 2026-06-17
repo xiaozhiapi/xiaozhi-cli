@@ -59,9 +59,9 @@ function seedMinimalRepo(rootDir, overrides = {}) {
     'scripts/harness-audit.js': 'Deterministic harness audit --format overall_score',
     'scripts/work-items.js': 'sync-github github-pr github-issue sourceClosedAt xiaozhi-work-items-sync-github',
     'scripts/hooks/session-activity-tracker.js': 'tool-usage.jsonl session_id tool_name',
-    'xiaozhi2/src/observability/mod.rs': 'ToolCallEvent RiskAssessment ToolLogger',
-    'xiaozhi2/src/session/store.rs': 'insert_tool_log query_tool_logs',
-    'xiaozhi2/src/session/manager.rs': 'sync_tool_activity_metrics tool-usage.jsonl',
+    'xiaozhi/src/observability/mod.rs': 'ToolCallEvent RiskAssessment ToolLogger',
+    'xiaozhi/src/session/store.rs': 'insert_tool_log query_tool_logs',
+    'xiaozhi/src/session/manager.rs': 'sync_tool_activity_metrics tool-usage.jsonl',
     'docs/architecture/observability-readiness.md': 'node scripts/observability-readiness.js --format json',
     'docs/architecture/progress-sync-contract.md': [
       'Linear GitHub handoff work-items issue capacity status update',
@@ -134,7 +134,7 @@ function seedMinimalRepo(rootDir, overrides = {}) {
     'tests/ci/scan-supply-chain-iocs.test.js': 'scan-supply-chain-iocs',
     'tests/ci/validate-workflow-security.test.js': 'npm audit signatures persist-credentials: false',
     'tests/scripts/npm-publish-surface.test.js': 'npm pack --dry-run Python bytecode',
-    'tests/docs/xiaozhi2-release-surface.test.js': 'publication-readiness.md',
+    'tests/docs/xiaozhi-release-surface.test.js': 'publication-readiness.md',
   };
 
   for (const [relativePath, content] of Object.entries({ ...files, ...overrides })) {
@@ -237,13 +237,13 @@ function runTests() {
 
     try {
       seedMinimalRepo(projectRoot, {
-        'xiaozhi2/src/observability/mod.rs': 'ToolCallEvent only'
+        'xiaozhi/src/observability/mod.rs': 'ToolCallEvent only'
       });
       const report = buildReport(projectRoot);
 
       assert.strictEqual(report.ready, false);
-      assert.ok(report.top_actions.some(action => action.id === 'xiaozhi2-tool-risk-ledger'));
-      assert.ok(report.checks.some(check => check.id === 'xiaozhi2-tool-risk-ledger' && !check.pass));
+      assert.ok(report.top_actions.some(action => action.id === 'xiaozhi-tool-risk-ledger'));
+      assert.ok(report.checks.some(check => check.id === 'xiaozhi-tool-risk-ledger' && !check.pass));
     } finally {
       cleanup(projectRoot);
     }

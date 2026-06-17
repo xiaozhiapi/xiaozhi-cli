@@ -285,7 +285,7 @@ impl Default for Config {
     fn default() -> Self {
         let home = dirs::home_dir().unwrap_or_else(|| PathBuf::from("."));
         Self {
-            db_path: home.join(".claude").join("xiaozhi2.db"),
+            db_path: home.join(".claude").join("xiaozhi.db"),
             worktree_root: PathBuf::from("/tmp/ecc-worktrees"),
             worktree_branch_prefix: "ecc".to_string(),
             max_parallel_sessions: 8,
@@ -336,7 +336,7 @@ impl Config {
     };
 
     pub fn config_path() -> PathBuf {
-        Self::config_root().join("xiaozhi2").join("config.toml")
+        Self::config_root().join("xiaozhi").join("config.toml")
     }
 
     pub fn cost_metrics_path(&self) -> PathBuf {
@@ -529,7 +529,7 @@ impl Config {
         dirs::home_dir()
             .unwrap_or_else(|| PathBuf::from("."))
             .join(".claude")
-            .join("xiaozhi2.toml")
+            .join("xiaozhi.toml")
     }
 
     fn global_config_paths() -> Vec<PathBuf> {
@@ -548,8 +548,8 @@ impl Config {
         let mut current = Some(start);
 
         while let Some(path) = current {
-            let legacy = path.join(".claude").join("xiaozhi2.toml");
-            let primary = path.join("xiaozhi2.toml");
+            let legacy = path.join(".claude").join("xiaozhi.toml");
+            let primary = path.join("xiaozhi.toml");
             let mut matches = Vec::new();
 
             if legacy.exists() && !global_paths.iter().any(|global| global == &legacy) {
@@ -923,7 +923,7 @@ mod tests {
     #[test]
     fn missing_budget_fields_fall_back_to_defaults() {
         let legacy_config = r#"
-db_path = "/tmp/xiaozhi2.db"
+db_path = "/tmp/xiaozhi.db"
 worktree_root = "/tmp/ecc-worktrees"
 max_parallel_sessions = 8
 max_parallel_worktrees = 6
@@ -1014,10 +1014,10 @@ theme = "Dark"
 
     #[test]
     fn layered_config_merges_global_and_project_overrides() {
-        let tempdir = std::env::temp_dir().join(format!("xiaozhi2-config-{}", Uuid::new_v4()));
+        let tempdir = std::env::temp_dir().join(format!("xiaozhi-config-{}", Uuid::new_v4()));
         let legacy_global_path = tempdir.join("legacy-global.toml");
         let global_path = tempdir.join("config.toml");
-        let project_path = tempdir.join("xiaozhi2.toml");
+        let project_path = tempdir.join("xiaozhi.toml");
         std::fs::create_dir_all(&tempdir).unwrap();
         std::fs::write(
             &legacy_global_path,
@@ -1075,20 +1075,20 @@ focus_metrics = "e"
 
     #[test]
     fn project_config_discovery_prefers_nearest_directory_and_new_path() {
-        let tempdir = std::env::temp_dir().join(format!("xiaozhi2-config-{}", Uuid::new_v4()));
+        let tempdir = std::env::temp_dir().join(format!("xiaozhi-config-{}", Uuid::new_v4()));
         let project_root = tempdir.join("project");
         let nested_dir = project_root.join("src").join("module");
         std::fs::create_dir_all(project_root.join(".claude")).unwrap();
         std::fs::create_dir_all(&nested_dir).unwrap();
-        std::fs::write(project_root.join(".claude").join("xiaozhi2.toml"), "").unwrap();
-        std::fs::write(project_root.join("xiaozhi2.toml"), "").unwrap();
+        std::fs::write(project_root.join(".claude").join("xiaozhi.toml"), "").unwrap();
+        std::fs::write(project_root.join("xiaozhi.toml"), "").unwrap();
 
         let paths = Config::project_config_paths_from(&nested_dir);
         assert_eq!(
             paths,
             vec![
-                project_root.join(".claude").join("xiaozhi2.toml"),
-                project_root.join("xiaozhi2.toml")
+                project_root.join(".claude").join("xiaozhi.toml"),
+                project_root.join("xiaozhi.toml")
             ]
         );
 
@@ -1098,7 +1098,7 @@ focus_metrics = "e"
     #[test]
     fn primary_config_path_uses_xdg_style_location() {
         let path = Config::config_path();
-        assert!(path.ends_with("xiaozhi2/config.toml"));
+        assert!(path.ends_with("xiaozhi/config.toml"));
     }
 
     #[test]
@@ -1730,7 +1730,7 @@ critical = 1.10
 
     #[test]
     fn save_round_trips_automation_settings() {
-        let path = std::env::temp_dir().join(format!("xiaozhi2-config-{}.toml", Uuid::new_v4()));
+        let path = std::env::temp_dir().join(format!("xiaozhi-config-{}.toml", Uuid::new_v4()));
         let mut config = Config::default();
         config.auto_dispatch_unread_handoffs = true;
         config.auto_dispatch_limit_per_session = 9;

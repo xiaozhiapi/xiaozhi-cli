@@ -115,10 +115,10 @@ enum Commands {
         /// Task description for the agent
         #[arg(short, long)]
         task: String,
-        /// Agent type (defaults to `default_agent` from xiaozhi2.toml)
+        /// Agent type (defaults to `default_agent` from xiaozhi.toml)
         #[arg(short, long)]
         agent: Option<String>,
-        /// Agent profile defined in xiaozhi2.toml
+        /// Agent profile defined in xiaozhi.toml
         #[arg(long)]
         profile: Option<String>,
         #[command(flatten)]
@@ -134,10 +134,10 @@ enum Commands {
         /// Task description for the delegated session
         #[arg(short, long)]
         task: Option<String>,
-        /// Agent type (defaults to `default_agent` from xiaozhi2.toml)
+        /// Agent type (defaults to `default_agent` from xiaozhi.toml)
         #[arg(short, long)]
         agent: Option<String>,
-        /// Agent profile defined in xiaozhi2.toml
+        /// Agent profile defined in xiaozhi.toml
         #[arg(long)]
         profile: Option<String>,
         #[command(flatten)]
@@ -145,7 +145,7 @@ enum Commands {
     },
     /// Launch a named orchestration template
     Template {
-        /// Template name defined in xiaozhi2.toml
+        /// Template name defined in xiaozhi.toml
         name: String,
         /// Optional task injected into the template context
         #[arg(short, long)]
@@ -164,10 +164,10 @@ enum Commands {
         /// Task description for the assignment
         #[arg(short, long)]
         task: String,
-        /// Agent type (defaults to `default_agent` from xiaozhi2.toml)
+        /// Agent type (defaults to `default_agent` from xiaozhi.toml)
         #[arg(short, long)]
         agent: Option<String>,
-        /// Agent profile defined in xiaozhi2.toml
+        /// Agent profile defined in xiaozhi.toml
         #[arg(long)]
         profile: Option<String>,
         #[command(flatten)]
@@ -177,7 +177,7 @@ enum Commands {
     DrainInbox {
         /// Lead session ID or alias
         session_id: String,
-        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi2.toml)
+        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi.toml)
         #[arg(short, long)]
         agent: Option<String>,
         #[command(flatten)]
@@ -188,7 +188,7 @@ enum Commands {
     },
     /// Sweep unread task handoffs across lead sessions and route them through the assignment policy
     AutoDispatch {
-        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi2.toml)
+        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi.toml)
         #[arg(short, long)]
         agent: Option<String>,
         #[command(flatten)]
@@ -199,7 +199,7 @@ enum Commands {
     },
     /// Dispatch unread handoffs, then rebalance delegate backlog across lead teams
     CoordinateBacklog {
-        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi2.toml)
+        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi.toml)
         #[arg(short, long)]
         agent: Option<String>,
         #[command(flatten)]
@@ -231,7 +231,7 @@ enum Commands {
     },
     /// Coordinate only when backlog pressure actually needs work
     MaintainCoordination {
-        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi2.toml)
+        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi.toml)
         #[arg(short, long)]
         agent: Option<String>,
         #[command(flatten)]
@@ -251,7 +251,7 @@ enum Commands {
     },
     /// Rebalance unread handoffs across lead teams with backed-up delegates
     RebalanceAll {
-        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi2.toml)
+        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi.toml)
         #[arg(short, long)]
         agent: Option<String>,
         #[command(flatten)]
@@ -264,7 +264,7 @@ enum Commands {
     RebalanceTeam {
         /// Lead session ID or alias
         session_id: String,
-        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi2.toml)
+        /// Agent type for routed delegates (defaults to `default_agent` from xiaozhi.toml)
         #[arg(short, long)]
         agent: Option<String>,
         #[command(flatten)]
@@ -384,7 +384,7 @@ enum Commands {
         #[command(subcommand)]
         command: GraphCommands,
     },
-    /// Audit Hermes/OpenClaw-style workspaces and map them onto XIAOZHI2
+    /// Audit Hermes/OpenClaw-style workspaces and map them onto XIAOZHI
     Migrate {
         #[command(subcommand)]
         command: MigrationCommands,
@@ -477,7 +477,7 @@ enum ScheduleCommands {
         /// Agent type (claude, codex, gemini, opencode)
         #[arg(short, long)]
         agent: Option<String>,
-        /// Agent profile defined in xiaozhi2.toml
+        /// Agent profile defined in xiaozhi.toml
         #[arg(long)]
         profile: Option<String>,
         #[command(flatten)]
@@ -530,7 +530,7 @@ enum RemoteCommands {
         /// Agent type (defaults to ECC default agent)
         #[arg(short, long)]
         agent: Option<String>,
-        /// Agent profile defined in xiaozhi2.toml
+        /// Agent profile defined in xiaozhi.toml
         #[arg(long)]
         profile: Option<String>,
         #[command(flatten)]
@@ -614,7 +614,7 @@ enum RemoteCommands {
 
 #[derive(clap::Subcommand, Debug)]
 enum MigrationCommands {
-    /// Audit a Hermes/OpenClaw-style workspace and map it onto XIAOZHI2 features
+    /// Audit a Hermes/OpenClaw-style workspace and map it onto XIAOZHI features
     Audit {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
@@ -623,7 +623,7 @@ enum MigrationCommands {
         #[arg(long)]
         json: bool,
     },
-    /// Generate an actionable XIAOZHI2 migration plan from a legacy workspace audit
+    /// Generate an actionable XIAOZHI migration plan from a legacy workspace audit
     Plan {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
@@ -647,19 +647,19 @@ enum MigrationCommands {
         #[arg(long)]
         json: bool,
     },
-    /// Import recurring jobs from a legacy cron/jobs.json into XIAOZHI2 schedules
+    /// Import recurring jobs from a legacy cron/jobs.json into XIAOZHI schedules
     ImportSchedules {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Preview detected jobs without creating XIAOZHI2 schedules
+        /// Preview detected jobs without creating XIAOZHI schedules
         #[arg(long)]
         dry_run: bool,
         /// Emit machine-readable JSON instead of the human summary
         #[arg(long)]
         json: bool,
     },
-    /// Import legacy workspace memory into the XIAOZHI2 context graph
+    /// Import legacy workspace memory into the XIAOZHI context graph
     ImportMemory {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
@@ -671,12 +671,12 @@ enum MigrationCommands {
         #[arg(long)]
         json: bool,
     },
-    /// Import safe legacy env/service config context into the XIAOZHI2 context graph
+    /// Import safe legacy env/service config context into the XIAOZHI context graph
     ImportEnv {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Preview detected importable sources without writing to the XIAOZHI2 graph
+        /// Preview detected importable sources without writing to the XIAOZHI graph
         #[arg(long)]
         dry_run: bool,
         /// Maximum imported records across all synthesized connectors
@@ -691,7 +691,7 @@ enum MigrationCommands {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Directory where imported XIAOZHI2 skill artifacts should be written
+        /// Directory where imported XIAOZHI skill artifacts should be written
         #[arg(long)]
         output_dir: PathBuf,
         /// Emit machine-readable JSON instead of the human summary
@@ -703,7 +703,7 @@ enum MigrationCommands {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Directory where imported XIAOZHI2 tool artifacts should be written
+        /// Directory where imported XIAOZHI tool artifacts should be written
         #[arg(long)]
         output_dir: PathBuf,
         /// Emit machine-readable JSON instead of the human summary
@@ -715,19 +715,19 @@ enum MigrationCommands {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Directory where imported XIAOZHI2 plugin artifacts should be written
+        /// Directory where imported XIAOZHI plugin artifacts should be written
         #[arg(long)]
         output_dir: PathBuf,
         /// Emit machine-readable JSON instead of the human summary
         #[arg(long)]
         json: bool,
     },
-    /// Import legacy gateway/dispatch tasks into the XIAOZHI2 remote queue
+    /// Import legacy gateway/dispatch tasks into the XIAOZHI remote queue
     ImportRemote {
         /// Path to the legacy Hermes/OpenClaw workspace root
         #[arg(long)]
         source: PathBuf,
-        /// Preview detected requests without creating XIAOZHI2 remote queue entries
+        /// Preview detected requests without creating XIAOZHI remote queue entries
         #[arg(long)]
         dry_run: bool,
         /// Emit machine-readable JSON instead of the human summary
@@ -881,7 +881,7 @@ enum GraphCommands {
     },
     /// Import external memory from a configured connector
     ConnectorSync {
-        /// Connector name from xiaozhi2.toml
+        /// Connector name from xiaozhi.toml
         #[arg(required_unless_present = "all", conflicts_with = "all")]
         name: Option<String>,
         /// Sync every configured memory connector
@@ -5008,7 +5008,7 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
                 "ecc daemon".to_string(),
             ],
             notes: vec![
-                "Recurring jobs can be recreated directly in XIAOZHI2's persistent scheduler."
+                "Recurring jobs can be recreated directly in XIAOZHI's persistent scheduler."
                     .to_string(),
                 "Translate each legacy cron prompt into an explicit ECC task body before enabling it."
                     .to_string(),
@@ -5030,7 +5030,7 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
                 "ecc remote run".to_string(),
             ],
             notes: vec![
-                "XIAOZHI2 already ships a token-authenticated remote dispatch queue and HTTP intake."
+                "XIAOZHI already ships a token-authenticated remote dispatch queue and HTTP intake."
                     .to_string(),
                 "Remote handlers should be translated to ECC task bodies instead of copied verbatim."
                     .to_string(),
@@ -5052,7 +5052,7 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
                 "ecc graph connectors".to_string(),
             ],
             notes: vec![
-                "XIAOZHI2 deep memory now supports persistent observations, recall, compaction, and external connectors."
+                "XIAOZHI deep memory now supports persistent observations, recall, compaction, and external connectors."
                     .to_string(),
             ],
         });
@@ -5154,7 +5154,7 @@ fn build_legacy_migration_audit_report(source: &Path) -> Result<LegacyMigrationA
                 "local API key setup".to_string(),
             ],
             notes: vec![
-                "Secret material should not be imported into XIAOZHI2."
+                "Secret material should not be imported into XIAOZHI."
                     .to_string(),
                 "Re-enter credentials locally through connectors, OAuth, MCP servers, or local env configuration."
                     .to_string(),
@@ -6225,7 +6225,7 @@ fn import_legacy_skills(source: &Path, output_dir: &Path) -> Result<LegacySkillI
         );
     }
 
-    let templates_path = output_dir.join("xiaozhi2.imported-skills.toml");
+    let templates_path = output_dir.join("xiaozhi.imported-skills.toml");
     fs::write(
         &templates_path,
         toml::to_string_pretty(&LegacySkillTemplateFile {
@@ -6464,7 +6464,7 @@ fn import_legacy_tools(source: &Path, output_dir: &Path) -> Result<LegacyToolImp
         );
     }
 
-    let templates_path = output_dir.join("xiaozhi2.imported-tools.toml");
+    let templates_path = output_dir.join("xiaozhi.imported-tools.toml");
     fs::write(
         &templates_path,
         toml::to_string_pretty(&LegacyToolTemplateFile {
@@ -6750,7 +6750,7 @@ fn import_legacy_plugins(source: &Path, output_dir: &Path) -> Result<LegacyPlugi
         );
     }
 
-    let templates_path = output_dir.join("xiaozhi2.imported-plugins.toml");
+    let templates_path = output_dir.join("xiaozhi.imported-plugins.toml");
     fs::write(
         &templates_path,
         toml::to_string_pretty(&LegacyPluginTemplateFile {
@@ -7167,8 +7167,8 @@ fn build_legacy_migration_plan_report(
             "scheduler" => LegacyMigrationPlanStep {
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
-                title: "Recreate Hermes/OpenClaw recurring jobs in XIAOZHI2 scheduler".to_string(),
-                target_surface: "XIAOZHI2 scheduler".to_string(),
+                title: "Recreate Hermes/OpenClaw recurring jobs in XIAOZHI scheduler".to_string(),
+                target_surface: "XIAOZHI scheduler".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: if schedule_commands.is_empty() {
                     vec![
@@ -7193,7 +7193,7 @@ fn build_legacy_migration_plan_report(
                     }
                     if disabled_schedule_jobs > 0 {
                         notes.push(format!(
-                            "{disabled_schedule_jobs} legacy recurring job(s) are disabled and were left out of generated XIAOZHI2 commands."
+                            "{disabled_schedule_jobs} legacy recurring job(s) are disabled and were left out of generated XIAOZHI commands."
                         ));
                     }
                     if invalid_schedule_jobs > 0 {
@@ -7207,8 +7207,8 @@ fn build_legacy_migration_plan_report(
             "gateway_dispatch" => LegacyMigrationPlanStep {
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
-                title: "Replace legacy gateway intake with XIAOZHI2 remote dispatch".to_string(),
-                target_surface: "XIAOZHI2 remote dispatch".to_string(),
+                title: "Replace legacy gateway intake with XIAOZHI remote dispatch".to_string(),
+                target_surface: "XIAOZHI remote dispatch".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: if remote_commands.is_empty() {
                     vec![
@@ -7236,7 +7236,7 @@ fn build_legacy_migration_plan_report(
                     }
                     if disabled_remote_requests > 0 {
                         notes.push(format!(
-                            "{disabled_remote_requests} legacy remote dispatch request(s) are disabled and were left out of generated XIAOZHI2 commands."
+                            "{disabled_remote_requests} legacy remote dispatch request(s) are disabled and were left out of generated XIAOZHI commands."
                         ));
                     }
                     if invalid_remote_requests > 0 {
@@ -7250,8 +7250,8 @@ fn build_legacy_migration_plan_report(
             "memory_tool" => LegacyMigrationPlanStep {
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
-                title: "Port legacy memory tool usage to XIAOZHI2 deep memory".to_string(),
-                target_surface: "XIAOZHI2 context graph".to_string(),
+                title: "Port legacy memory tool usage to XIAOZHI deep memory".to_string(),
+                target_surface: "XIAOZHI context graph".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: vec![
                     "ecc graph add-observation --entity-id <id> --type migration_note --summary \"Imported legacy memory pattern\"".to_string(),
@@ -7264,8 +7264,8 @@ fn build_legacy_migration_plan_report(
             "workspace_memory" => LegacyMigrationPlanStep {
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
-                title: "Import sanitized workspace memory through XIAOZHI2 connectors".to_string(),
-                target_surface: "XIAOZHI2 memory connectors".to_string(),
+                title: "Import sanitized workspace memory through XIAOZHI connectors".to_string(),
+                target_surface: "XIAOZHI memory connectors".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: vec![
                     "ecc graph connector-sync hermes_workspace".to_string(),
@@ -7347,7 +7347,7 @@ fn build_legacy_migration_plan_report(
                     "ecc graph recall \"<service or env key>\"".to_string(),
                 ],
                 config_snippets: vec![
-                    "# Re-enter connector auth locally; do not copy legacy secrets into XIAOZHI2.\n# Typical targets: Google Drive OAuth, GitHub, Stripe, Linear, browser creds.".to_string(),
+                    "# Re-enter connector auth locally; do not copy legacy secrets into XIAOZHI.\n# Typical targets: Google Drive OAuth, GitHub, Stripe, Linear, browser creds.".to_string(),
                 ],
                 notes: artifact.notes.clone(),
             },
@@ -7355,7 +7355,7 @@ fn build_legacy_migration_plan_report(
                 category: artifact.category.clone(),
                 readiness: artifact.readiness,
                 title: format!("Review legacy {} surface", artifact.category),
-                target_surface: "Manual XIAOZHI2 translation".to_string(),
+                target_surface: "Manual XIAOZHI translation".to_string(),
                 source_paths: artifact.source_paths.clone(),
                 command_snippets: Vec::new(),
                 config_snippets: Vec::new(),
@@ -7385,7 +7385,7 @@ fn write_legacy_migration_scaffold(
     })?;
 
     let plan_path = output_dir.join("migration-plan.md");
-    let config_path = output_dir.join("xiaozhi2.migration.toml");
+    let config_path = output_dir.join("xiaozhi.migration.toml");
 
     fs::write(&plan_path, format_legacy_migration_plan_human(plan))
         .with_context(|| format!("write migration plan: {}", plan_path.display()))?;
@@ -7406,7 +7406,7 @@ fn write_legacy_migration_scaffold(
 fn render_legacy_migration_config_scaffold(plan: &LegacyMigrationPlanReport) -> String {
     let mut sections = vec![
         format!(
-            "# XIAOZHI2 migration scaffold generated from {}\n# Review every section before merging it into a real xiaozhi2.toml.",
+            "# XIAOZHI migration scaffold generated from {}\n# Review every section before merging it into a real xiaozhi.toml.",
             plan.source
         ),
     ];
@@ -8144,14 +8144,14 @@ fn build_otel_export(
         resource_spans: vec![OtlpResourceSpans {
             resource: OtlpResource {
                 attributes: vec![
-                    otlp_string_attr("service.name", "xiaozhi2"),
+                    otlp_string_attr("service.name", "xiaozhi"),
                     otlp_string_attr("service.version", env!("CARGO_PKG_VERSION")),
                     otlp_string_attr("telemetry.sdk.language", "rust"),
                 ],
             },
             scope_spans: vec![OtlpScopeSpans {
                 scope: OtlpInstrumentationScope {
-                    name: "xiaozhi2".to_string(),
+                    name: "xiaozhi".to_string(),
                     version: env!("CARGO_PKG_VERSION").to_string(),
                 },
                 spans,
@@ -8472,7 +8472,7 @@ mod tests {
     impl TestDir {
         fn new(label: &str) -> Result<Self> {
             let path =
-                std::env::temp_dir().join(format!("xiaozhi2-main-{label}-{}", uuid::Uuid::new_v4()));
+                std::env::temp_dir().join(format!("xiaozhi-main-{label}-{}", uuid::Uuid::new_v4()));
             fs::create_dir_all(&path)?;
             Ok(Self { path })
         }
@@ -9962,7 +9962,7 @@ mod tests {
             "--name",
             "dashboard.rs",
             "--path",
-            "xiaozhi2/src/tui/dashboard.rs",
+            "xiaozhi/src/tui/dashboard.rs",
             "--summary",
             "Primary TUI surface",
             "--meta",
@@ -9987,7 +9987,7 @@ mod tests {
                 assert_eq!(session_id.as_deref(), Some("latest"));
                 assert_eq!(entity_type, "file");
                 assert_eq!(name, "dashboard.rs");
-                assert_eq!(path.as_deref(), Some("xiaozhi2/src/tui/dashboard.rs"));
+                assert_eq!(path.as_deref(), Some("xiaozhi/src/tui/dashboard.rs"));
                 assert_eq!(summary, "Primary TUI surface");
                 assert_eq!(metadata, vec!["language=rust"]);
                 assert!(json);
@@ -10744,7 +10744,7 @@ mod tests {
 
         let rendered = format_legacy_migration_plan_human(&plan);
         assert!(rendered.contains("Legacy migration plan"));
-        assert!(rendered.contains("Import sanitized workspace memory through XIAOZHI2 connectors"));
+        assert!(rendered.contains("Import sanitized workspace memory through XIAOZHI connectors"));
         let env_step = plan
             .steps
             .iter()
@@ -10839,7 +10839,7 @@ mod tests {
     }
 
     #[test]
-    fn import_legacy_schedules_creates_real_xiaozhi2_schedules() -> Result<()> {
+    fn import_legacy_schedules_creates_real_xiaozhi_schedules() -> Result<()> {
         let tempdir = TestDir::new("legacy-schedule-import-live")?;
         let root = tempdir.path();
         fs::create_dir_all(root.join("cron"))?;
@@ -11252,7 +11252,7 @@ Route existing installs to portal first before checkout.
             .iter()
             .any(|skill| skill.template_name == "ops_recovery_markdown"));
 
-        let config_text = fs::read_to_string(output_dir.join("xiaozhi2.imported-skills.toml"))?;
+        let config_text = fs::read_to_string(output_dir.join("xiaozhi.imported-skills.toml"))?;
         assert!(config_text.contains("[orchestration_templates.ecc_imports_research_md]"));
         assert!(config_text.contains("[orchestration_templates.ops_recovery_markdown]"));
         assert!(config_text.contains("Translate and run that workflow for {{task}}."));
@@ -11302,7 +11302,7 @@ Route existing installs to portal first before checkout.
             .iter()
             .any(|tool| tool.suggested_surface == "hook"));
 
-        let config_text = fs::read_to_string(output_dir.join("xiaozhi2.imported-tools.toml"))?;
+        let config_text = fs::read_to_string(output_dir.join("xiaozhi.imported-tools.toml"))?;
         assert!(config_text.contains("[orchestration_templates.tool_browser_check_portal_py]"));
         assert!(config_text.contains("[orchestration_templates.tool_hooks_preflight_sh]"));
         assert!(config_text.contains("Rebuild or wrap that behavior as an ECC-native"));
@@ -11353,7 +11353,7 @@ Route existing installs to portal first before checkout.
             .iter()
             .any(|plugin| plugin.suggested_surface == "skill"));
 
-        let config_text = fs::read_to_string(output_dir.join("xiaozhi2.imported-plugins.toml"))?;
+        let config_text = fs::read_to_string(output_dir.join("xiaozhi.imported-plugins.toml"))?;
         assert!(config_text.contains("[orchestration_templates.plugin_hooks_review_py]"));
         assert!(config_text.contains("[orchestration_templates.plugin_skills_recovery_py]"));
         assert!(config_text.contains("Port that behavior into an ECC-native"));
@@ -11385,7 +11385,7 @@ Route existing installs to portal first before checkout.
         assert_eq!(report.files_written.len(), 2);
 
         let plan_text = fs::read_to_string(output_dir.join("migration-plan.md"))?;
-        let config_text = fs::read_to_string(output_dir.join("xiaozhi2.migration.toml"))?;
+        let config_text = fs::read_to_string(output_dir.join("xiaozhi.migration.toml"))?;
         assert!(plan_text.contains("Legacy migration plan"));
         assert!(config_text.contains("[memory_connectors.hermes_workspace]"));
         assert!(config_text.contains("[orchestration_templates.legacy_workflow]"));
@@ -11425,7 +11425,7 @@ Route existing installs to portal first before checkout.
                 session_id: Some("sess-12345678".to_string()),
                 entity_type: "function".to_string(),
                 name: "render_metrics".to_string(),
-                path: Some("xiaozhi2/src/tui/dashboard.rs".to_string()),
+                path: Some("xiaozhi/src/tui/dashboard.rs".to_string()),
                 summary: "Renders the metrics pane".to_string(),
                 metadata: BTreeMap::from([("language".to_string(), "rust".to_string())]),
                 created_at: chrono::DateTime::parse_from_rfc3339("2026-04-10T01:02:03Z")

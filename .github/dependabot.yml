@@ -82,7 +82,7 @@ updates:
           - "patch"
 
   - package-ecosystem: "cargo"
-    directory: "/xiaozhi2"
+    directory: "/xiaozhi"
     schedule:
       interval: "weekly"
       day: "monday"

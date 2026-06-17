@@ -5080,7 +5080,7 @@ mod tests {
     impl TestDir {
         fn new(label: &str) -> Result<Self> {
             let path =
-                std::env::temp_dir().join(format!("xiaozhi2-{}-{}", label, uuid::Uuid::new_v4()));
+                std::env::temp_dir().join(format!("xiaozhi-{}-{}", label, uuid::Uuid::new_v4()));
             fs::create_dir_all(&path)?;
             Ok(Self { path })
         }
@@ -5868,7 +5868,7 @@ mod tests {
             Some("session-1"),
             "file",
             "dashboard.rs",
-            Some("xiaozhi2/src/tui/dashboard.rs"),
+            Some("xiaozhi/src/tui/dashboard.rs"),
             "Primary dashboard surface",
             &metadata,
         )?;
@@ -5876,7 +5876,7 @@ mod tests {
             Some("session-1"),
             "file",
             "dashboard.rs",
-            Some("xiaozhi2/src/tui/dashboard.rs"),
+            Some("xiaozhi/src/tui/dashboard.rs"),
             "Updated dashboard summary",
             &metadata,
         )?;
@@ -6131,7 +6131,7 @@ mod tests {
             Some("session-1"),
             "file",
             "dashboard.rs",
-            Some("xiaozhi2/src/tui/dashboard.rs"),
+            Some("xiaozhi/src/tui/dashboard.rs"),
             "Renders the TUI dashboard",
             &BTreeMap::new(),
         )?;
@@ -6413,7 +6413,7 @@ mod tests {
             Some("session-1"),
             "file",
             "dashboard.rs",
-            Some("xiaozhi2/src/tui/dashboard.rs"),
+            Some("xiaozhi/src/tui/dashboard.rs"),
             "",
             &BTreeMap::new(),
         )?;
@@ -6421,7 +6421,7 @@ mod tests {
             Some("session-1"),
             "function",
             "render_metrics",
-            Some("xiaozhi2/src/tui/dashboard.rs"),
+            Some("xiaozhi/src/tui/dashboard.rs"),
             "",
             &BTreeMap::new(),
         )?;

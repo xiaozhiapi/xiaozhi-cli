@@ -204,7 +204,7 @@
             "timeout": 10
           }
         ],
-        "description": "Track per-session tool calls and file activity for XIAOZHI2 metrics",
+        "description": "Track per-session tool calls and file activity for XIAOZHI metrics",
         "id": "post:session-activity-tracker"
       },
       {

@@ -507,7 +507,7 @@ mod tests {
     use std::path::PathBuf;
 
     fn temp_db_path() -> PathBuf {
-        std::env::temp_dir().join(format!("xiaozhi2-daemon-test-{}.db", uuid::Uuid::new_v4()))
+        std::env::temp_dir().join(format!("xiaozhi-daemon-test-{}.db", uuid::Uuid::new_v4()))
     }
 
     fn sample_session(id: &str, state: SessionState, pid: Option<u32>) -> Session {

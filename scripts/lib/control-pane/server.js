@@ -49,7 +49,7 @@ function isAllowedOrigin(originHeader, allowedHostnames) {
 function usage() {
   return [
     'Usage:',
-    '  node scripts/control-pane.js [--host 127.0.0.1] [--port 8765] [--db <xiaozhi2.db>] [--state-db <state.db>] [--config <xiaozhi2.toml>] [--query <text>]',
+    '  node scripts/control-pane.js [--host 127.0.0.1] [--port 8765] [--db <xiaozhi.db>] [--state-db <state.db>] [--config <xiaozhi.toml>] [--query <text>]',
     '',
     'Options:',
     '  --state-db <path>  Read agent work items from an XIAOZHI state-store database',

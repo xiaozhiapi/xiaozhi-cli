@@ -16,7 +16,7 @@ The public proof must show the actual system:
 - reusable skills, rules, hooks, MCP conventions, and release gates;
 - Claude Code, Codex, OpenCode, Cursor, Gemini, Zed, GitHub Copilot, and
   terminal-only workflows as supported execution surfaces;
-- `xiaozhi2/` as the alpha control-plane/TUI direction;
+- `xiaozhi/` as the alpha control-plane/TUI direction;
 - Hermes as the optional operator shell for chat, cron, handoffs, and daily
   work routing;
 - XIAOZHI Tools Pro, GitHub Sponsors, and consulting as the business surface that
@@ -52,7 +52,7 @@ clip, paragraph, or demo:
 | --- | --- | --- |
 | Product category | XIAOZHI as the harness-native operator system, not a Claude-only config pack | Converts confused OSS traffic into install, Pro, and sponsor intent |
 | Harness coverage | Claude Code, Codex, OpenCode, Cursor, Gemini, Zed, GitHub Copilot, and terminal workflows shown as execution surfaces | Partner conversations with tools, IDEs, model providers, and platform teams |
-| Control plane | `xiaozhi2/` alpha dashboard/status/session surface and Hermes operator shell clearly framed as directionally live | Consulting and team implementation sprints |
+| Control plane | `xiaozhi/` alpha dashboard/status/session surface and Hermes operator shell clearly framed as directionally live | Consulting and team implementation sprints |
 | Enterprise trust | AgentShield, supply-chain, release, observability, and CI gates shown as repeatable evidence | Security vendors, code-review vendors, platform sponsors, and enterprise pilots |
 | Media engine | Primary launch video, five proof clips, browser captures, transcripts, EDLs, captions, and editable timelines | Social reach, podcast/talk booking, sponsor proof, partner demos |
 | Community funnel | GitHub Discussions, Discord once approved, sponsor tiers, Pro, and consulting CTAs routed without clutter | Repeatable inbound, not one-off launch spikes |
@@ -93,7 +93,7 @@ through XIAOZHI, while live Itô data and account-specific calls remain gated by
 | --- | --- | --- |
 | Repo identity | README, package metadata, plugin metadata, release docs, workflows, and launch copy all use `xiaozhiapi/XIAOZHI` where public URLs are needed | Canonical URL sweep |
 | Package and plugin publication | `xiaozhi-cli@2.0.0-rc.1` dry-runs clean, npm `next` is approved, Claude plugin tag dry-runs, Codex repo marketplace smoke passes, OpenCode build passes | Refresh publication evidence from final commit |
-| Product proof | Quickstart, cross-harness architecture, demo prompts, `xiaozhi2/` alpha boundary, AgentShield safety proof, and hosted XIAOZHI Tools links are consistent | Keep proof surfaces concrete |
+| Product proof | Quickstart, cross-harness architecture, demo prompts, `xiaozhi/` alpha boundary, AgentShield safety proof, and hosted XIAOZHI Tools links are consistent | Keep proof surfaces concrete |
 | Revenue proof | Sponsor tiers, Pro pricing, consulting CTA, partner CTA, and billing-readback language are current | Do not announce billing claims before live readback |
 | Content proof | Launch video, short-form clips, screenshots, release notes, GitHub Discussion, X, LinkedIn, and longform post are aligned | Pick final video cuts, upload after approval, and attach public URLs |
 | Community proof | Discord invite, rules, channels, onboarding, and sponsor/community routing are ready | Needs invite/token decision before public links |

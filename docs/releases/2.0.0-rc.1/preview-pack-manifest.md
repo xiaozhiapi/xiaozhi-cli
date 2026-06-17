@@ -23,7 +23,7 @@ tagging plugin surfaces, uploading video, or posting announcements.
 | `docs/releases/2.0.0-rc.1/quickstart.md` | Clone-to-first-workflow path | Covers clone, install, verify, first skill, and harness switch |
 | `docs/releases/2.0.0-rc.1/launch-checklist.md` | Operator launch checklist | Must remain approval-gated for plugin, video, billing, and announcement actions |
 | `docs/releases/2.0.0-rc.1/publication-readiness.md` | Release gate | Requires fresh evidence from the exact release commit |
-| `docs/releases/2.0.0-rc.1/publication-evidence-2026-05-15.md` | Current May 15 queue, roadmap, security, supply-chain watch, no-lifecycle CI install hardening, AgentShield #86 evidence-pack provenance, XIAOZHI Tools billing-gate, Actions cache purge, and `xiaozhi2` test evidence through PR #1941 | Must be superseded by a final clean-checkout evidence file before real publication |
+| `docs/releases/2.0.0-rc.1/publication-evidence-2026-05-15.md` | Current May 15 queue, roadmap, security, supply-chain watch, no-lifecycle CI install hardening, AgentShield #86 evidence-pack provenance, XIAOZHI Tools billing-gate, Actions cache purge, and `xiaozhi` test evidence through PR #1941 | Must be superseded by a final clean-checkout evidence file before real publication |
 | `docs/releases/2.0.0-rc.1/publication-evidence-2026-05-16.md` | Current May 16/17 queue cleanup, recsys skill merge, GateGuard triage, PR #1947 supply-chain protection, AgentShield #87 plugin-cache confidence evidence, AgentShield #88 evidence-pack inspect/readback, AgentShield #89 evidence-pack fleet routing, AgentShield #90 fleet review items, AgentShield #91 policy export, AgentShield #92 policy promotion, XIAOZHI-Tools #76 fleet-summary consumption, XIAOZHI-Tools #77 hosted finding evidence paths, XIAOZHI-Tools #78 harness policy-route linking, dashboard refresh, and combined Node/Rust/release-surface gate evidence through the May 16 mirror | Must still be repeated from a strict clean checkout before real publication |
 | `docs/releases/2.0.0-rc.1/publication-evidence-2026-05-17.md` | May 17 queue-zero state, Japanese localization merge, Dependabot TypeScript and Node type merges, post-merge ja-JP lint repair, Mini Shai-Hulud/TanStack protection recheck, npm audit/signature checks, legacy and Linear progress routing, deterministic preview-pack smoke, operator dashboard refresh, Linear sync, and GitHub CI evidence for `27dc2918` | Superseded by the May 18 evidence snapshot; repeat from a strict clean checkout before real publication |
 | `docs/releases/2.0.0-rc.1/publication-evidence-2026-05-18.md` | May 18 queue-zero state, #1970/#1971/#1972 merge batch, #1978 review/closure, supply-chain recheck, AgentShield evidence mirror, Linear sync, current-head CI/security scan success for `4470e2e6`, and ITO-46 naming/plugin publication closure | Superseded by the May 19 XIAOZHI identity, video, and growth evidence snapshot |
@@ -114,9 +114,9 @@ npm run observability:ready
 npm run security:ioc-scan
 npm audit --audit-level=moderate
 npm audit signatures
-node tests/docs/xiaozhi2-release-surface.test.js
+node tests/docs/xiaozhi-release-surface.test.js
 node tests/run-all.js
-cd xiaozhi2 && cargo test
+cd xiaozhi && cargo test
 ```
 
 ## Publication Blockers

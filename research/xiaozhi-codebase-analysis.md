@@ -1,4 +1,4 @@
-# XIAOZHI2 Codebase Research Report
+# XIAOZHI Codebase Research Report
 
 **Date:** 2026-03-26
 **Subject:** `xiaozhi-tui` v0.1.0 — Agentic IDE Control Plane
@@ -6,7 +6,7 @@
 
 ## 1. Architecture Overview
 
-XIAOZHI2 is a Rust TUI application that orchestrates AI coding agent sessions. It uses:
+XIAOZHI is a Rust TUI application that orchestrates AI coding agent sessions. It uses:
 - **ratatui 0.29** + **crossterm 0.28** for terminal UI
 - **rusqlite 0.32** (bundled) for local state persistence
 - **tokio 1** (full) for async runtime
@@ -62,7 +62,7 @@ XIAOZHI2 is a Rust TUI application that orchestrates AI coding agent sessions. I
 
 ### 3.4 Config — File-Only
 
-`Config::load()` reads `~/.claude/xiaozhi2.toml` only. The implementation lacks environment variable overrides (e.g., `XIAOZHI_DB_PATH`, `XIAOZHI_WORKTREE_ROOT`) and CLI flags for configuration.
+`Config::load()` reads `~/.claude/xiaozhi.toml` only. The implementation lacks environment variable overrides (e.g., `XIAOZHI_DB_PATH`, `XIAOZHI_WORKTREE_ROOT`) and CLI flags for configuration.
 
 ### 3.5 Legacy Dependency Candidate: `git2`
 
@@ -169,4 +169,4 @@ The codebase follows ratatui conventions well:
 
 ---
 
-**Bottom line:** XIAOZHI2 is a well-structured Rust project with clean error handling, good separation of concerns, and strong security features (risk scoring). The main gaps are incomplete features (comms, new-session dialog, single agent) rather than architectural problems. The codebase is ready for feature work on top of the solid foundation.
+**Bottom line:** XIAOZHI is a well-structured Rust project with clean error handling, good separation of concerns, and strong security features (risk scoring). The main gaps are incomplete features (comms, new-session dialog, single agent) rather than architectural problems. The codebase is ready for feature work on top of the solid foundation.

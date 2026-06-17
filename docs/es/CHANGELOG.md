@@ -13,7 +13,7 @@
 - Actualizados los metadatos de paquete, plugin, marketplace, OpenCode, agente y README a `2.0.0-rc.1`.
 - Añadido `docs/releases/2.0.0-rc.1/` con notas de versión, borradores para redes sociales, lista de verificación de lanzamiento, notas de transferencia y prompts de demo.
 - Añadido `docs/architecture/cross-harness.md` y cobertura de regresión para el límite XIAOZHI/Hermes.
-- Mantenido el versionado de `xiaozhi2/` independiente por ahora; sigue siendo un scaffold alfa del plano de control a menos que ingeniería de releases decida lo contrario.
+- Mantenido el versionado de `xiaozhi/` independiente por ahora; sigue siendo un scaffold alfa del plano de control a menos que ingeniería de releases decida lo contrario.
 
 ### Notas
 
@@ -27,7 +27,7 @@
 - Superficie de lanzamiento público sincronizada con el repo en vivo tras varias semanas de crecimiento OSS y fusiones del backlog.
 - Carril de flujos de trabajo de operador expandido con skills de voz, clasificación de grafos, facturación, espacio de trabajo y salida.
 - Carril de generación de medios expandido con herramientas de lanzamiento basadas en Manim y Remotion.
-- El binario del plano de control alfa de XIAOZHI 2.0 ya compila localmente desde `xiaozhi2/` y expone la primera superficie de CLI/TUI utilizable.
+- El binario del plano de control alfa de XIAOZHI 2.0 ya compila localmente desde `xiaozhi/` y expone la primera superficie de CLI/TUI utilizable.
 
 ### Superficie de Lanzamiento
 
@@ -45,7 +45,7 @@
 
 ### XIAOZHI 2.0 Alpha
 
-- `cargo build --manifest-path xiaozhi2/Cargo.toml` pasa en la línea base del repositorio.
+- `cargo build --manifest-path xiaozhi/Cargo.toml` pasa en la línea base del repositorio.
 - `xiaozhi-tui` actualmente expone `dashboard`, `start`, `sessions`, `status`, `stop`, `resume` y `daemon`.
 - El alpha es real y utilizable para experimentación local, pero el roadmap más amplio del plano de control sigue incompleto y no debe tratarse como GA.
 

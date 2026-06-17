@@ -29,8 +29,8 @@ operator needs.
   for tool coverage, context efficiency, quality gates, memory persistence,
   eval coverage, security guardrails, and cost efficiency.
 - Tool activity: `scripts/hooks/session-activity-tracker.js` records local
-  `tool-usage.jsonl` events that XIAOZHI2 can sync.
-- Risk ledger: `xiaozhi2/src/observability/mod.rs` scores tool calls and stores a
+  `tool-usage.jsonl` events that XIAOZHI can sync.
+- Risk ledger: `xiaozhi/src/observability/mod.rs` scores tool calls and stores a
   paginated ledger for review.
 - Progress sync: `docs/architecture/progress-sync-contract.md` defines how
   GitHub, Linear, local handoffs, the repo roadmap, and `scripts/work-items.js`
@@ -73,7 +73,7 @@ later, but only after the local event model is useful enough to trust.
    session surfaces are available.
 6. Run `node scripts/work-items.js sync-github --repo <owner/repo>` before
    relying on local work-item status for a tracked repository.
-7. Use XIAOZHI2 tool logs for risky operations, conflict analysis, and handoff
+7. Use XIAOZHI tool logs for risky operations, conflict analysis, and handoff
    review before increasing autonomy.
 8. Re-run the release-safety evidence checks before any public release action:
    publication readiness, supply-chain incident response, workflow-security

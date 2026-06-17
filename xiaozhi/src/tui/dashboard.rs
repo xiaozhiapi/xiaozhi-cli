@@ -9848,7 +9848,7 @@ mod tests {
 
     #[test]
     fn toggle_git_status_mode_renders_selected_worktree_status() -> Result<()> {
-        let root = std::env::temp_dir().join(format!("xiaozhi2-git-status-{}", Uuid::new_v4()));
+        let root = std::env::temp_dir().join(format!("xiaozhi-git-status-{}", Uuid::new_v4()));
         init_git_repo(&root)?;
         fs::write(root.join("README.md"), "hello from git status\n")?;
 
@@ -9889,7 +9889,7 @@ mod tests {
 
     #[test]
     fn toggle_output_mode_from_git_status_opens_selected_file_patch() -> Result<()> {
-        let root = std::env::temp_dir().join(format!("xiaozhi2-git-patch-view-{}", Uuid::new_v4()));
+        let root = std::env::temp_dir().join(format!("xiaozhi-git-patch-view-{}", Uuid::new_v4()));
         init_git_repo(&root)?;
         fs::write(
             root.join("README.md"),
@@ -9933,7 +9933,7 @@ mod tests {
 
     #[test]
     fn git_patch_mode_stages_only_selected_hunk() -> Result<()> {
-        let root = std::env::temp_dir().join(format!("xiaozhi2-git-patch-stage-{}", Uuid::new_v4()));
+        let root = std::env::temp_dir().join(format!("xiaozhi-git-patch-stage-{}", Uuid::new_v4()));
         init_git_repo(&root)?;
         let original = (1..=12)
             .map(|index| format!("line {index}"))
@@ -10030,7 +10030,7 @@ mod tests {
 
     #[test]
     fn begin_pr_prompt_seeds_latest_commit_subject() -> Result<()> {
-        let root = std::env::temp_dir().join(format!("xiaozhi2-pr-prompt-{}", Uuid::new_v4()));
+        let root = std::env::temp_dir().join(format!("xiaozhi-pr-prompt-{}", Uuid::new_v4()));
         init_git_repo(&root)?;
         fs::write(root.join("README.md"), "seed pr title\n")?;
         run_git(&root, &["commit", "-am", "seed pr title"])?;
@@ -10079,7 +10079,7 @@ mod tests {
     #[test]
     fn submit_pr_prompt_passes_custom_metadata_to_gh() -> Result<()> {
         let temp_root =
-            std::env::temp_dir().join(format!("xiaozhi2-dashboard-pr-submit-{}", Uuid::new_v4()));
+            std::env::temp_dir().join(format!("xiaozhi-dashboard-pr-submit-{}", Uuid::new_v4()));
         let root = temp_root.join("repo");
         init_git_repo(&root)?;
         let remote = temp_root.join("remote.git");
@@ -10388,7 +10388,7 @@ diff --git a/src/lib.rs b/src/lib.rs\n\
 
     #[test]
     fn timeline_and_metrics_render_recent_file_activity_details() -> Result<()> {
-        let root = std::env::temp_dir().join(format!("xiaozhi2-file-activity-{}", Uuid::new_v4()));
+        let root = std::env::temp_dir().join(format!("xiaozhi-file-activity-{}", Uuid::new_v4()));
         fs::create_dir_all(&root)?;
         let now = Utc::now();
         let mut session = sample_session(
@@ -10437,7 +10437,7 @@ diff --git a/src/lib.rs b/src/lib.rs\n\
 
     #[test]
     fn metrics_text_surfaces_file_activity_conflicts() -> Result<()> {
-        let root = std::env::temp_dir().join(format!("xiaozhi2-file-overlaps-{}", Uuid::new_v4()));
+        let root = std::env::temp_dir().join(format!("xiaozhi-file-overlaps-{}", Uuid::new_v4()));
         fs::create_dir_all(&root)?;
         let now = Utc::now();
         let mut focus = sample_session(
@@ -10689,7 +10689,7 @@ diff --git a/src/lib.rs b/src/lib.rs\n\
             Some(&session.id),
             "file",
             "dashboard.rs",
-            Some("xiaozhi2/src/tui/dashboard.rs"),
+            Some("xiaozhi/src/tui/dashboard.rs"),
             "dashboard renderer",
             &std::collections::BTreeMap::new(),
         )?;
@@ -10746,7 +10746,7 @@ diff --git a/src/lib.rs b/src/lib.rs\n\
             Some(&session.id),
             "file",
             "dashboard.rs",
-            Some("xiaozhi2/src/tui/dashboard.rs"),
+            Some("xiaozhi/src/tui/dashboard.rs"),
             "dashboard renderer",
             &std::collections::BTreeMap::new(),
         )?;
@@ -11363,7 +11363,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[test]
     fn toggle_auto_worktree_policy_persists_config() {
-        let tempdir = std::env::temp_dir().join(format!("xiaozhi2-worktree-policy-{}", Uuid::new_v4()));
+        let tempdir = std::env::temp_dir().join(format!("xiaozhi-worktree-policy-{}", Uuid::new_v4()));
         std::fs::create_dir_all(&tempdir).unwrap();
         let previous_home = std::env::var_os("HOME");
         std::env::set_var("HOME", &tempdir);
@@ -12356,7 +12356,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[test]
     fn refresh_builds_completion_summary_popup_from_metrics_activity_and_logs() -> Result<()> {
-        let root = std::env::temp_dir().join(format!("xiaozhi2-completion-popup-{}", Uuid::new_v4()));
+        let root = std::env::temp_dir().join(format!("xiaozhi-completion-popup-{}", Uuid::new_v4()));
         fs::create_dir_all(root.join(".claude").join("metrics"))?;
 
         let mut cfg = build_config(&root.join(".claude"));
@@ -12413,7 +12413,7 @@ diff --git a/src/lib.rs b/src/lib.rs
     #[test]
     fn refresh_persists_completion_summary_observation() -> Result<()> {
         let root =
-            std::env::temp_dir().join(format!("xiaozhi2-completion-observation-{}", Uuid::new_v4()));
+            std::env::temp_dir().join(format!("xiaozhi-completion-observation-{}", Uuid::new_v4()));
         fs::create_dir_all(root.join(".claude").join("metrics"))?;
 
         let mut cfg = build_config(&root.join(".claude"));
@@ -12528,7 +12528,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[test]
     fn refresh_syncs_tool_activity_metrics_from_hook_file() {
-        let tempdir = std::env::temp_dir().join(format!("xiaozhi2-activity-sync-{}", Uuid::new_v4()));
+        let tempdir = std::env::temp_dir().join(format!("xiaozhi-activity-sync-{}", Uuid::new_v4()));
         fs::create_dir_all(tempdir.join("metrics")).unwrap();
         let db_path = tempdir.join("state.db");
         let db = StateStore::open(&db_path).unwrap();
@@ -12705,7 +12705,7 @@ diff --git a/src/lib.rs b/src/lib.rs
     #[test]
     fn selected_session_metrics_text_includes_harness_summary() -> Result<()> {
         let tempdir = std::env::temp_dir().join(format!(
-            "xiaozhi2-dashboard-harness-metrics-{}",
+            "xiaozhi-dashboard-harness-metrics-{}",
             uuid::Uuid::new_v4()
         ));
         fs::create_dir_all(tempdir.join(".claude"))?;
@@ -12930,7 +12930,7 @@ diff --git a/src/lib.rs b/src/lib.rs
             "feature_development".to_string(),
             crate::config::OrchestrationTemplateConfig {
                 description: None,
-                project: Some("xiaozhi2-smoke".to_string()),
+                project: Some("xiaozhi-smoke".to_string()),
                 task_group: Some("{{task}}".to_string()),
                 agent: Some("claude".to_string()),
                 profile: None,
@@ -12981,7 +12981,7 @@ diff --git a/src/lib.rs b/src/lib.rs
         assert!(dashboard
             .sessions
             .iter()
-            .all(|session| session.project == "xiaozhi2-smoke"));
+            .all(|session| session.project == "xiaozhi-smoke"));
         assert!(dashboard
             .sessions
             .iter()
@@ -13018,7 +13018,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[test]
     fn refresh_preserves_selected_session_by_id() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
 
@@ -13066,7 +13066,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[test]
     fn metrics_scroll_uses_independent_offset() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
 
@@ -13111,7 +13111,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[test]
     fn refresh_loads_selected_session_output_and_follows_tail() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
 
@@ -13344,7 +13344,7 @@ diff --git a/src/lib.rs b/src/lib.rs
             vec![
                 test_output_line(OutputStream::Stdout, "normal output"),
                 test_output_line(OutputStream::Stdout, "Read(src/lib.rs)"),
-                test_output_line(OutputStream::Stdout, "Updated xiaozhi2/src/tui/dashboard.rs"),
+                test_output_line(OutputStream::Stdout, "Updated xiaozhi/src/tui/dashboard.rs"),
                 test_output_line(OutputStream::Stderr, "stderr line"),
             ],
         );
@@ -13366,7 +13366,7 @@ diff --git a/src/lib.rs b/src/lib.rs
         assert_eq!(dashboard.output_filter, OutputFilter::FileChangesOnly);
         assert_eq!(
             dashboard.visible_output_text(),
-            "Updated xiaozhi2/src/tui/dashboard.rs"
+            "Updated xiaozhi/src/tui/dashboard.rs"
         );
         assert_eq!(dashboard.output_title(), " Output file changes ");
         assert_eq!(
@@ -13748,7 +13748,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[tokio::test]
     async fn stop_selected_uses_session_manager_transition() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
 
@@ -13784,7 +13784,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[tokio::test]
     async fn resume_selected_requeues_failed_session() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
 
@@ -13795,10 +13795,10 @@ diff --git a/src/lib.rs b/src/lib.rs
             task_group: "general".to_string(),
             agent_type: "claude".to_string(),
             state: SessionState::Failed,
-            working_dir: PathBuf::from("/tmp/xiaozhi2-resume"),
+            working_dir: PathBuf::from("/tmp/xiaozhi-resume"),
             pid: None,
             worktree: Some(WorktreeInfo {
-                path: PathBuf::from("/tmp/xiaozhi2-resume"),
+                path: PathBuf::from("/tmp/xiaozhi-resume"),
                 branch: "ecc/failed-1".to_string(),
                 base_branch: "main".to_string(),
             }),
@@ -13824,10 +13824,10 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[tokio::test]
     async fn cleanup_selected_worktree_clears_session_metadata() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
-        let worktree_path = std::env::temp_dir().join(format!("xiaozhi2-cleanup-{}", Uuid::new_v4()));
+        let worktree_path = std::env::temp_dir().join(format!("xiaozhi-cleanup-{}", Uuid::new_v4()));
         std::fs::create_dir_all(&worktree_path)?;
 
         db.insert_session(&Session {
@@ -13869,7 +13869,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[tokio::test]
     async fn prune_inactive_worktrees_sets_operator_note_when_clear() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
 
@@ -13904,11 +13904,11 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[tokio::test]
     async fn prune_inactive_worktrees_reports_pruned_and_skipped_counts() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
-        let active_path = std::env::temp_dir().join(format!("xiaozhi2-active-{}", Uuid::new_v4()));
-        let stopped_path = std::env::temp_dir().join(format!("xiaozhi2-stopped-{}", Uuid::new_v4()));
+        let active_path = std::env::temp_dir().join(format!("xiaozhi-active-{}", Uuid::new_v4()));
+        let stopped_path = std::env::temp_dir().join(format!("xiaozhi-stopped-{}", Uuid::new_v4()));
         std::fs::create_dir_all(&active_path)?;
         std::fs::create_dir_all(&stopped_path)?;
 
@@ -13978,10 +13978,10 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[tokio::test]
     async fn prune_inactive_worktrees_reports_retained_sessions_within_retention() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
-        let retained_path = std::env::temp_dir().join(format!("xiaozhi2-retained-{}", Uuid::new_v4()));
+        let retained_path = std::env::temp_dir().join(format!("xiaozhi-retained-{}", Uuid::new_v4()));
         std::fs::create_dir_all(&retained_path)?;
 
         db.insert_session(&Session {
@@ -14182,7 +14182,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[tokio::test]
     async fn delete_selected_session_removes_inactive_session() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
 
@@ -14217,7 +14217,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[tokio::test]
     async fn auto_dispatch_backlog_sets_operator_note_when_clear() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
 
@@ -14252,7 +14252,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[tokio::test]
     async fn rebalance_selected_team_sets_operator_note_when_clear() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
 
@@ -14287,7 +14287,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[tokio::test]
     async fn rebalance_all_teams_sets_operator_note_when_clear() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
 
@@ -14322,7 +14322,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[tokio::test]
     async fn coordinate_backlog_sets_operator_note_when_clear() -> Result<()> {
-        let db_path = std::env::temp_dir().join(format!("xiaozhi2-dashboard-{}.db", Uuid::new_v4()));
+        let db_path = std::env::temp_dir().join(format!("xiaozhi-dashboard-{}.db", Uuid::new_v4()));
         let db = StateStore::open(&db_path)?;
         let now = Utc::now();
 
@@ -14467,12 +14467,12 @@ diff --git a/src/lib.rs b/src/lib.rs
         dashboard.pane_size_percent = DEFAULT_GRID_SIZE_PERCENT;
 
         for _ in 0..20 {
-            dashboard.adjust_pane_size_with_save(5, Path::new("/tmp/xiaozhi2-noop.toml"), |_| Ok(()));
+            dashboard.adjust_pane_size_with_save(5, Path::new("/tmp/xiaozhi-noop.toml"), |_| Ok(()));
         }
         assert_eq!(dashboard.pane_size_percent, MAX_PANE_SIZE_PERCENT);
 
         for _ in 0..40 {
-            dashboard.adjust_pane_size_with_save(-5, Path::new("/tmp/xiaozhi2-noop.toml"), |_| Ok(()));
+            dashboard.adjust_pane_size_with_save(-5, Path::new("/tmp/xiaozhi-noop.toml"), |_| Ok(()));
         }
         assert_eq!(dashboard.pane_size_percent, MIN_PANE_SIZE_PERCENT);
     }
@@ -14600,7 +14600,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[test]
     fn pane_command_mode_sets_layout() {
-        let tempdir = std::env::temp_dir().join(format!("xiaozhi2-pane-command-{}", Uuid::new_v4()));
+        let tempdir = std::env::temp_dir().join(format!("xiaozhi-pane-command-{}", Uuid::new_v4()));
         std::fs::create_dir_all(&tempdir).unwrap();
         let previous_home = std::env::var_os("HOME");
         std::env::set_var("HOME", &tempdir);
@@ -14630,7 +14630,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
     #[test]
     fn cycle_pane_layout_rotates_and_hides_log_when_leaving_grid() {
-        let tempdir = std::env::temp_dir().join(format!("xiaozhi2-cycle-pane-{}", Uuid::new_v4()));
+        let tempdir = std::env::temp_dir().join(format!("xiaozhi-cycle-pane-{}", Uuid::new_v4()));
         std::fs::create_dir_all(&tempdir).unwrap();
         let previous_home = std::env::var_os("HOME");
         std::env::set_var("HOME", &tempdir);
@@ -14659,9 +14659,9 @@ diff --git a/src/lib.rs b/src/lib.rs
     #[test]
     fn cycle_pane_layout_persists_config() {
         let mut dashboard = test_dashboard(Vec::new(), 0);
-        let tempdir = std::env::temp_dir().join(format!("xiaozhi2-layout-policy-{}", Uuid::new_v4()));
+        let tempdir = std::env::temp_dir().join(format!("xiaozhi-layout-policy-{}", Uuid::new_v4()));
         std::fs::create_dir_all(&tempdir).unwrap();
-        let config_path = tempdir.join("xiaozhi2.toml");
+        let config_path = tempdir.join("xiaozhi.toml");
 
         dashboard.cycle_pane_layout_with_save(&config_path, |cfg| cfg.save_to_path(&config_path));
 
@@ -14684,9 +14684,9 @@ diff --git a/src/lib.rs b/src/lib.rs
     #[test]
     fn pane_resize_persists_linear_setting() {
         let mut dashboard = test_dashboard(Vec::new(), 0);
-        let tempdir = std::env::temp_dir().join(format!("xiaozhi2-pane-size-{}", Uuid::new_v4()));
+        let tempdir = std::env::temp_dir().join(format!("xiaozhi-pane-size-{}", Uuid::new_v4()));
         std::fs::create_dir_all(&tempdir).unwrap();
-        let config_path = tempdir.join("xiaozhi2.toml");
+        let config_path = tempdir.join("xiaozhi.toml");
 
         dashboard.adjust_pane_size_with_save(5, &config_path, |cfg| cfg.save_to_path(&config_path));
 
@@ -14716,7 +14716,7 @@ diff --git a/src/lib.rs b/src/lib.rs
         dashboard.cfg.grid_pane_size_percent = 63;
         dashboard.pane_size_percent = 41;
 
-        dashboard.cycle_pane_layout_with_save(Path::new("/tmp/xiaozhi2-noop.toml"), |_| Ok(()));
+        dashboard.cycle_pane_layout_with_save(Path::new("/tmp/xiaozhi-noop.toml"), |_| Ok(()));
 
         assert_eq!(dashboard.cfg.pane_layout, PaneLayout::Grid);
         assert_eq!(dashboard.pane_size_percent, 63);
@@ -14734,7 +14734,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
         let note = dashboard.auto_split_layout_after_spawn_with_save(
             2,
-            Path::new("/tmp/xiaozhi2-noop.toml"),
+            Path::new("/tmp/xiaozhi-noop.toml"),
             |_| Ok(()),
         );
 
@@ -14764,7 +14764,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
         let note = dashboard.auto_split_layout_after_spawn_with_save(
             2,
-            Path::new("/tmp/xiaozhi2-noop.toml"),
+            Path::new("/tmp/xiaozhi-noop.toml"),
             |_| Ok(()),
         );
 
@@ -14795,7 +14795,7 @@ diff --git a/src/lib.rs b/src/lib.rs
 
         let note = dashboard.auto_split_layout_after_spawn_with_save(
             3,
-            Path::new("/tmp/xiaozhi2-noop.toml"),
+            Path::new("/tmp/xiaozhi-noop.toml"),
             |_| Ok(()),
         );
 
@@ -14835,9 +14835,9 @@ diff --git a/src/lib.rs b/src/lib.rs
     #[test]
     fn toggle_theme_persists_config() {
         let mut dashboard = test_dashboard(Vec::new(), 0);
-        let tempdir = std::env::temp_dir().join(format!("xiaozhi2-theme-policy-{}", Uuid::new_v4()));
+        let tempdir = std::env::temp_dir().join(format!("xiaozhi-theme-policy-{}", Uuid::new_v4()));
         std::fs::create_dir_all(&tempdir).unwrap();
-        let config_path = tempdir.join("xiaozhi2.toml");
+        let config_path = tempdir.join("xiaozhi.toml");
 
         dashboard.toggle_theme_with_save(&config_path, |cfg| cfg.save_to_path(&config_path));
 

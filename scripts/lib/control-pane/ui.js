@@ -478,7 +478,7 @@ function renderControlPaneHtml() {
 
     function renderSessions(sessions) {
       if (!sessions.length) {
-        $('#sessions').innerHTML = '<div class="empty">No XIAOZHI2 sessions found.</div>';
+        $('#sessions').innerHTML = '<div class="empty">No XIAOZHI sessions found.</div>';
         return;
       }
 

@@ -15,7 +15,7 @@ Snapshot date: 2026-05-12.
 | Reference | Primary pressure on XIAOZHI 2.0 | Concrete XIAOZHI delta |
 | --- | --- | --- |
 | [`stablyai/orca`](https://github.com/stablyai/orca) | Worktree-native multi-agent IDE with terminals, source control, GitHub integration, SSH, notifications, design/browser mode, account switching, and per-worktree context. | Treat worktree lifecycle, review state, notification state, and account/provider identity as first-class adapter signals. |
-| [`superset-sh/superset`](https://github.com/superset-sh/superset) | Desktop AI-agent workspace with parallel execution, worktree isolation, diff review, workspace presets, and broad CLI-agent compatibility. | Add workspace preset taxonomy and make XIAOZHI2 session/worktree state exportable enough for external editors to consume. |
+| [`superset-sh/superset`](https://github.com/superset-sh/superset) | Desktop AI-agent workspace with parallel execution, worktree isolation, diff review, workspace presets, and broad CLI-agent compatibility. | Add workspace preset taxonomy and make XIAOZHI session/worktree state exportable enough for external editors to consume. |
 | [`standardagents/dmux`](https://github.com/standardagents/dmux) | Tmux/worktree orchestration, lifecycle hooks, multi-select agent control, smart merging, file browser, notifications, and cleanup. | Add lifecycle-hook coverage to the harness matrix and define merge/conflict queue events. |
 | [`aidenybai/ghast`](https://github.com/aidenybai/ghast) | Native macOS terminal multiplexer with cwd-grouped workspaces, panes, tabs, drag/drop, search, and notifications. | Preserve terminal-native ergonomics while adding cwd/session grouping and searchable handoff/session records. |
 | [`jarrodwatts/claude-hud`](https://github.com/jarrodwatts/claude-hud) | Always-visible Claude Code statusline for context, tools, agents, todos, and transcript-backed activity. | Formalize the XIAOZHI HUD/status payload for context, cost, tool calls, active agents, todos, queue state, checks, and risk. |
@@ -73,7 +73,7 @@ Repo work:
 
 - `everything-claude-code`: extend the adapter compliance matrix and public
   scorecard onramp.
-- `xiaozhi2`: surface session/worktree state through a stable local payload before
+- `xiaozhi`: surface session/worktree state through a stable local payload before
   adding hosted telemetry.
 - `XIAOZHI-Tools`: consume the same lifecycle events for PR checks, issue routing,
   and Linear sync.
@@ -103,7 +103,7 @@ Repo work:
 
 - Keep `docs/architecture/observability-readiness.md` as the operator-facing
   readiness gate.
-- Define a versioned HUD/status JSON contract that both XIAOZHI2 and XIAOZHI Tools can
+- Define a versioned HUD/status JSON contract that both XIAOZHI and XIAOZHI Tools can
   consume.
 - Add sample exports from `loop-status`, `session-inspect`, harness audit, and
   risk ledger into a fixture directory before building visual UI.

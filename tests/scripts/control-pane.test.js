@@ -151,7 +151,7 @@ async function runTests() {
       '--port',
       '8788',
       '--db',
-      '/tmp/xiaozhi2.db',
+      '/tmp/xiaozhi.db',
       '--state-db',
       '/tmp/xiaozhi-state.db',
       '--query',
@@ -161,7 +161,7 @@ async function runTests() {
 
     assert.strictEqual(parsed.host, '127.0.0.1');
     assert.strictEqual(parsed.port, 8788);
-    assert.strictEqual(parsed.dbPath, '/tmp/xiaozhi2.db');
+    assert.strictEqual(parsed.dbPath, '/tmp/xiaozhi.db');
     assert.strictEqual(parsed.stateDbPath, '/tmp/xiaozhi-state.db');
     assert.strictEqual(parsed.query, 'Hermes memory');
     assert.strictEqual(parsed.openBrowser, false);
@@ -189,9 +189,9 @@ async function runTests() {
     );
   })) passed++; else failed++;
 
-  if (await test('serves HTML and snapshot JSON from a temp XIAOZHI2 database', async () => {
+  if (await test('serves HTML and snapshot JSON from a temp XIAOZHI database', async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'xiaozhi-control-pane-server-'));
-    const dbPath = path.join(tempDir, 'xiaozhi2.db');
+    const dbPath = path.join(tempDir, 'xiaozhi.db');
 
     try {
       await writeMinimalDatabase(dbPath);
@@ -504,7 +504,7 @@ async function runTests() {
       stdio: ['ignore', 'pipe', 'pipe'],
       env: {
         ...process.env,
-        XIAOZHI2_DB_PATH: path.join(os.tmpdir(), 'missing-xiaozhi2-cli.db'),
+        XIAOZHI_DB_PATH: path.join(os.tmpdir(), 'missing-xiaozhi-cli.db'),
       },
     });
     const exitPromise = waitForExit(child);

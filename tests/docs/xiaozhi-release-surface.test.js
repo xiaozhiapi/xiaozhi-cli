@@ -284,12 +284,12 @@ test('release docs use release-candidate wording consistently', () => {
   assert.ok(!releaseNotes.includes('## Preview Boundaries'));
 });
 
-test('launch checklist records the xiaozhi2 alpha version policy', () => {
-  const cargoToml = read('xiaozhi2/Cargo.toml');
+test('launch checklist records the xiaozhi alpha version policy', () => {
+  const cargoToml = read('xiaozhi/Cargo.toml');
   const launchChecklist = read('docs/releases/2.0.0-rc.1/launch-checklist.md');
   assert.ok(cargoToml.includes('version = "0.1.0"'));
-  assert.ok(launchChecklist.includes('`xiaozhi2/Cargo.toml` stays at `0.1.0`'));
-  assert.ok(!launchChecklist.includes('confirm whether `xiaozhi2/Cargo.toml` moves'));
+  assert.ok(launchChecklist.includes('`xiaozhi/Cargo.toml` stays at `0.1.0`'));
+  assert.ok(!launchChecklist.includes('confirm whether `xiaozhi/Cargo.toml` moves'));
 });
 
 test('release video suite manifest gates the content launch lane', () => {
@@ -502,7 +502,7 @@ test('active release identity surfaces use canonical XIAOZHI repo URLs', () => {
     'docs/releases/2.0.0-rc.1/publication-readiness.md',
     'docs/releases/2.0.0-rc.1/naming-and-publication-matrix.md',
     'docs/releases/2.0.0-rc.1/release-url-ledger-2026-05-19.md',
-    'xiaozhi2/Cargo.toml',
+    'xiaozhi/Cargo.toml',
     'scripts/platform-audit.js',
     'scripts/discussion-audit.js'
   ];

@@ -119,9 +119,9 @@ function buildChecks(rootDir) {
   const sessionInspect = readText(rootDir, 'scripts/session-inspect.js');
   const harnessAudit = readText(rootDir, 'scripts/harness-audit.js');
   const activityTracker = readText(rootDir, 'scripts/hooks/session-activity-tracker.js');
-  const observabilityRust = readText(rootDir, 'xiaozhi2/src/observability/mod.rs');
-  const sessionStoreRust = readText(rootDir, 'xiaozhi2/src/session/store.rs');
-  const sessionManagerRust = readText(rootDir, 'xiaozhi2/src/session/manager.rs');
+  const observabilityRust = readText(rootDir, 'xiaozhi/src/observability/mod.rs');
+  const sessionStoreRust = readText(rootDir, 'xiaozhi/src/session/store.rs');
+  const sessionManagerRust = readText(rootDir, 'xiaozhi/src/session/manager.rs');
   const readinessDoc = readText(rootDir, 'docs/architecture/observability-readiness.md');
   const hudStatusContract = readText(rootDir, 'docs/architecture/hud-status-session-control.md');
   const progressSyncContract = readText(rootDir, 'docs/architecture/progress-sync-contract.md');
@@ -133,7 +133,7 @@ function buildChecks(rootDir) {
   const workflowSecurityValidator = readText(rootDir, 'scripts/ci/validate-workflow-security.js');
   const workflowSecurityValidatorTests = readText(rootDir, 'tests/ci/validate-workflow-security.test.js');
   const publishSurfaceTest = readText(rootDir, 'tests/scripts/npm-publish-surface.test.js');
-  const releaseSurfaceTest = readText(rootDir, 'tests/docs/xiaozhi2-release-surface.test.js');
+  const releaseSurfaceTest = readText(rootDir, 'tests/docs/xiaozhi-release-surface.test.js');
   const hudStatusFixture = safeParseJson(readText(rootDir, 'examples/hud-status-contract.json')) || {};
   const quickstart = readText(rootDir, 'docs/releases/2.0.0-rc.1/quickstart.md');
   const releaseNotes = readText(rootDir, 'docs/releases/2.0.0-rc.1/release-notes.md');
@@ -226,16 +226,16 @@ function buildChecks(rootDir) {
       fix: 'Restore hook-side tool activity recording to metrics/tool-usage.jsonl.'
     },
     {
-      id: 'xiaozhi2-tool-risk-ledger',
+      id: 'xiaozhi-tool-risk-ledger',
       category: 'Tool Activity',
       points: 3,
-      path: 'xiaozhi2/src/observability/mod.rs',
-      description: 'XIAOZHI2 records tool calls with risk scoring and paginated queries',
-      pass: fileExists(rootDir, 'xiaozhi2/src/observability/mod.rs')
+      path: 'xiaozhi/src/observability/mod.rs',
+      description: 'XIAOZHI records tool calls with risk scoring and paginated queries',
+      pass: fileExists(rootDir, 'xiaozhi/src/observability/mod.rs')
         && includesAll(observabilityRust, ['ToolCallEvent', 'RiskAssessment', 'ToolLogger'])
         && includesAll(sessionStoreRust, ['insert_tool_log', 'query_tool_logs'])
         && includesAll(sessionManagerRust, ['sync_tool_activity_metrics', 'tool-usage.jsonl']),
-      fix: 'Restore XIAOZHI2 tool logging, risk scoring, store queries, and metrics sync.'
+      fix: 'Restore XIAOZHI tool logging, risk scoring, store queries, and metrics sync.'
     },
     {
       id: 'release-observability-onramp',
@@ -296,7 +296,7 @@ function buildChecks(rootDir) {
         && fileExists(rootDir, 'tests/ci/scan-supply-chain-iocs.test.js')
         && fileExists(rootDir, 'tests/ci/validate-workflow-security.test.js')
         && fileExists(rootDir, 'tests/scripts/npm-publish-surface.test.js')
-        && fileExists(rootDir, 'tests/docs/xiaozhi2-release-surface.test.js')
+        && fileExists(rootDir, 'tests/docs/xiaozhi-release-surface.test.js')
         && includesAll(publicationReadiness, [
           'Publication Gates',
           'Required Command Evidence',

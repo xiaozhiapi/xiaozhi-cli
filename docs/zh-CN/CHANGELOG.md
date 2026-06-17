@@ -13,7 +13,7 @@
 * 将 package、plugin、marketplace、OpenCode、agent 和 README 元数据更新为 `2.0.0-rc.1`。
 * 在 `docs/releases/2.0.0-rc.1/` 下集中发布说明、社交草稿、发布清单、交接说明和演示提示词。
 * 新增 `docs/architecture/cross-harness.md`，并补充 XIAOZHI/Hermes 边界的回归覆盖。
-* `xiaozhi2/` 版本保持独立；除非 release engineering 另有决定，它仍是 alpha control-plane scaffold。
+* `xiaozhi/` 版本保持独立；除非 release engineering 另有决定，它仍是 alpha control-plane scaffold。
 
 ### 备注
 
@@ -27,7 +27,7 @@
 * 在数周 OSS 增长和 backlog 合并后，公开发布表面已同步到当前仓库状态。
 * 操作员工作流扩展了 voice、graph-ranking、billing、workspace 和 outbound 技能。
 * 媒体生成工作流扩展了 Manim 和 Remotion 优先的发布工具。
-* XIAOZHI 2.0 alpha control-plane binary 现在可从 `xiaozhi2/` 本地构建，并提供首个可用的 CLI/TUI 表面。
+* XIAOZHI 2.0 alpha control-plane binary 现在可从 `xiaozhi/` 本地构建，并提供首个可用的 CLI/TUI 表面。
 
 ### 发布表面
 

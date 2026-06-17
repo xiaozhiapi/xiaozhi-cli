@@ -113,7 +113,7 @@ partner/sponsor funnel, consulting/talk funnel, and social launch plan.
   gated.
 - The XIAOZHI 2.0 release story should lead with the product shape directly:
   harness-native operator system, reusable skills/rules/hooks/MCP conventions,
-  `xiaozhi2/` alpha control plane, Hermes as optional operator shell, and XIAOZHI Tools
+  `xiaozhi/` alpha control plane, Hermes as optional operator shell, and XIAOZHI Tools
   Pro/Sponsors/consulting as the business surface.
 - Copy should avoid presenting this as a repo rename or config-pack migration.
   The release proof should show the system through install flow, cross-harness
@@ -549,7 +549,7 @@ As of 2026-05-20:
   `~/.cluster-swarm/handoffs/`
   records the May 13 supply-chain sweep: no active lockfile/manifest hit for
   TanStack/Mini Shai-Hulud indicators; npm audit/signature checks clean across
-  active npm lockfiles; `cargo audit` clean for `xiaozhi2`; trunk `pip-audit`
+  active npm lockfiles; `cargo audit` clean for `xiaozhi`; trunk `pip-audit`
   clean; JARVIS backend pinned-graph Python audit clean under the supported
   Python 3.12 target.
 - PR #1861 validation refreshed `node scripts/harness-audit.js --format json`
@@ -577,12 +577,12 @@ As of 2026-05-20:
 - `docs/releases/2.0.0-rc.1/publication-evidence-2026-05-13.md` records the
   release-readiness evidence refresh: 70/70 harness audit, adapter compliance
   PASS, 16/16 observability readiness, 2376/2376 root Node tests, markdownlint,
-  release-surface and npm publish-surface tests, and 462/462 `xiaozhi2` Rust tests.
+  release-surface and npm publish-surface tests, and 462/462 `xiaozhi` Rust tests.
 - `docs/releases/2.0.0-rc.1/publication-evidence-2026-05-13-post-hardening.md`
   records the post-hardening release-readiness refresh after PR #1850 and
   PR #1851: 70/70 harness audit, adapter compliance PASS, 18/18 observability
   readiness, 2380/2380 root Node tests, markdownlint, release-surface and
-  npm publish-surface tests, 462/462 `xiaozhi2` Rust tests, npm audit/signature
+  npm publish-surface tests, 462/462 `xiaozhi` Rust tests, npm audit/signature
   checks, Rust advisory audit, and TanStack/Mini Shai-Hulud IOC checks.
 - A detached clean worktree at
   `bfacf37715b39655cbc2c48f12f2a35c67cb0253` verified Claude plugin tag
@@ -983,7 +983,7 @@ repo evidence and merge commits.
 | --- | --- | --- | --- |
 | Queue hygiene and salvage | GitHub PR/issue state, salvage ledger | Append ledger entries for any future stale closures | Every cleanup batch |
 | Release and publication | rc.1 release docs, publication readiness doc | Naming matrix and plugin submission/contact checklist | Before any tag |
-| Harness OS core | Audit, adapter matrix, observability docs, `xiaozhi2/` | HUD/session-control acceptance spec | Weekly until GA |
+| Harness OS core | Audit, adapter matrix, observability docs, `xiaozhi/` | HUD/session-control acceptance spec | Weekly until GA |
 | Evaluation and RAG | Reference-set validation, harness audit, traces, XIAOZHI-Tools corpus | Read-only evaluator/RAG prototype plus stale-salvage, billing-readiness, CI-failure-diagnosis, harness-config-quality, AgentShield policy-exception, skill-quality evidence, deep-analyzer evidence, and RAG/evaluator comparison fixtures; XIAOZHI-Tools #68 publishes the corpus as a hosted promotion readiness check-run, #69 scores cached hosted job outputs against the same corpus, #70 emits ranked retrieval candidates plus a model prompt seed, #71 adds a fail-closed hosted model-judge request contract, and #72 executes that judge only when explicitly enabled and backed by hosted retrieval citations; XIAOZHI-Tools `16c537f` surfaces policy-promotion Action output values in hosted security comments/checks; XIAOZHI-Tools `05d4e82` adds hosted model-judge audit traces with request fingerprints and allowed-citation counts | Marketplace Pro billing-state verification with webhook provenance |
 | AgentShield enterprise | AgentShield PR evidence and roadmap notes | Fleet routing landed in #89 after evidence-pack inspect/readback shipped in #88; #90 emits fleet `reviewItems`; #91 exports checksum-backed policy bundles; #92 promotes checksum-verified policies from those bundles into active policy files; #94 adds Zed and VS Code adapter detection, Zed project scan discovery, and `.zed/setup.mjs` persistence IOC coverage; #95 closes the `brace-expansion` Dependabot alert with 0 open alerts after merge; AgentShield `87aec47` adds policy promotion `reviewItems`; `28d08c7` adds package-manager hardening drift detection; `659f569` refreshes workflow action runtime pins; `ee585cd` corrects unsupported npm release-age guidance and keeps enforceable cooldown findings on pnpm/Yarn; `1124535` exposes package-manager hardening Action outputs for CI/hosted routing; `1593925` exposes policy-promotion Action outputs and runtime-smoke job-summary evidence; `840952a` adds fleet review ticket payloads and current Mini Shai-Hulud IOC breadcrumbs; XIAOZHI-Tools #76 consumes fleet summaries, #77 surfaces source evidence paths in hosted findings, #78 links fleet routes to harness owners, XIAOZHI-Tools `8658951` consumes policy-promotion Action outputs, and XIAOZHI-Tools `16c537f` renders operator-visible output values | Deepen live operator approval/readback after Marketplace/payment gates |
 | XIAOZHI Tools app | XIAOZHI-Tools PR evidence, billing audit, risk taxonomy, evaluator/RAG corpus | XIAOZHI-Tools #53 published the supply-chain workflow hardening branch, #54 tracks copy-ready PR drafts in the Linear/project backlog, #55 classifies analysis-depth readiness, #56 exposes the hosted execution plan, #57 executes the first hosted CI diagnostics job, #58 executes the hosted security evidence review job, #59 executes the hosted harness compatibility audit, #60 executes the hosted reference-set evaluation, #61 executes the hosted AI routing/cost review, #62 executes hosted team backlog routing, #63 publishes the hosted depth-plan check-run, #64 dispatches hosted jobs from PR comments, #65 persists hosted result history/check-runs, #66 exposes hosted job status from PR comments, #67 makes depth-plan recommendations cache-aware, #68 publishes hosted promotion readiness from the evaluator/RAG corpus, #69 scores cached hosted job outputs against that corpus, #70 emits ranked retrieval candidates plus a model prompt seed, #71 emits the gated `hosted-promotion-judge.v1` contract without live model calls, #72 adds opt-in live model-judge execution behind hosted-evidence and strict JSON/citation gates, #73 adds a fail-closed native-payments `announcementGate` to billing readiness, #74 adds `npm run billing:announcement-gate` for operator verification, #75 tightens the billing announcement gate for live Marketplace readback, #76 routes AgentShield fleet-summary evidence into hosted security findings, #77 adds source evidence paths to hosted finding output, #78 links AgentShield fleet target paths to hosted harness owner findings, `8658951` routes AgentShield policy-promotion Action outputs into hosted security review and promotion readiness, `16c537f` renders policy-promotion status/pack/count/digest values in hosted security comments/checks, `05d4e82` renders hosted promotion judge request fingerprints plus allowed-citation audit traces, `91a441b` adds billing announcement preflight output for required readback inputs, `eb69412` records the initial production readback state, `95d0bec` adds aggregate `billing:kv-readback` evidence, `2859678` requires Marketplace webhook provenance in billing readiness, `42653f9` adds Wrangler OAuth readback with live aggregate production counts, `632e059` adds sanitized target-account billing readback for the exact Marketplace test account, XIAOZHI-Tools #89 adds selected-ready-target KV readback, XIAOZHI-Tools #90 adds selected-target official announcement gating without raw login input, and XIAOZHI-Tools #91 adds `--env-file` support for ignored local billing credentials without printing secrets or logins | Obtain or rotate the local/internal `INTERNAL_API_SECRET` bearer-token path, via exported env or ignored `--env-file`, then run the live selected-target billing announcement gate |

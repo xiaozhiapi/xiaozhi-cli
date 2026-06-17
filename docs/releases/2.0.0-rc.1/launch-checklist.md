@@ -19,7 +19,7 @@
 ## Release Surface
 
 - verify package, plugin, marketplace, OpenCode, and agent metadata stays at `2.0.0-rc.1`
-- verify `xiaozhi2/Cargo.toml` stays at `0.1.0` for rc.1; `xiaozhi2/` remains an alpha control-plane scaffold
+- verify `xiaozhi/Cargo.toml` stays at `0.1.0` for rc.1; `xiaozhi/` remains an alpha control-plane scaffold
 - complete `publication-readiness.md` with fresh evidence before any GitHub release, npm publish, plugin submission, or announcement post
 - run `npm run release:approval-gate -- --format json` after owner approvals
   and live URL readbacks are recorded; it must return ready true before any
@@ -32,7 +32,7 @@
   then rerun publish-facing checks from the exact release commit
 - update release metadata in one dedicated release-version PR
 - run the root test suite
-- run `cd xiaozhi2 && cargo test`
+- run `cd xiaozhi && cargo test`
 
 ## Content
 
@@ -52,7 +52,7 @@
 - Hermes plus XIAOZHI side by side
 - release docs being generated or reviewed from the repo
 - a workflow moving from brief to post to checklist
-- `xiaozhi2/` dashboard or session surface with alpha framing
+- `xiaozhi/` dashboard or session surface with alpha framing
 
 ## Messaging
 

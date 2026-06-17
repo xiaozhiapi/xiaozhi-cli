@@ -7,7 +7,7 @@ const ACTION_DEFINITIONS = new Map([
     'sync-knowledge',
     {
       label: 'Sync Knowledge',
-      description: 'Import all configured XIAOZHI2 memory connectors into the context graph.',
+      description: 'Import all configured XIAOZHI memory connectors into the context graph.',
       args: ({ limit }) => [
         'run',
         '--quiet',
@@ -26,7 +26,7 @@ const ACTION_DEFINITIONS = new Map([
     'recall-knowledge',
     {
       label: 'Recall Knowledge',
-      description: 'Run XIAOZHI2 context recall for the current operator query.',
+      description: 'Run XIAOZHI context recall for the current operator query.',
       args: ({ query, limit }) => [
         'run',
         '--quiet',
@@ -45,7 +45,7 @@ const ACTION_DEFINITIONS = new Map([
     'graph-sync',
     {
       label: 'Backfill Graph',
-      description: 'Backfill the XIAOZHI2 graph from sessions, decisions, file activity, and messages.',
+      description: 'Backfill the XIAOZHI graph from sessions, decisions, file activity, and messages.',
       args: ({ limit }) => [
         'run',
         '--quiet',
@@ -64,7 +64,7 @@ const ACTION_DEFINITIONS = new Map([
     'open-dashboard',
     {
       label: 'Open TUI',
-      description: 'Launch the XIAOZHI2 terminal dashboard.',
+      description: 'Launch the XIAOZHI terminal dashboard.',
       args: () => ['run', '--quiet', '--', 'dashboard'],
       executable: false,
     },
@@ -100,7 +100,7 @@ function buildControlPaneAction(actionId, options = {}) {
   }
 
   const repoRoot = path.resolve(options.repoRoot || process.cwd());
-  const cwd = path.join(repoRoot, 'xiaozhi2');
+  const cwd = path.join(repoRoot, 'xiaozhi');
   const limit = normalizeLimit(options.limit);
   const query = String(options.query || '').trim();
   const args = definition.args({ limit, query });

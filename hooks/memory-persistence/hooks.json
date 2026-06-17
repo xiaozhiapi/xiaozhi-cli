@@ -33,7 +33,7 @@
       "event": "PostToolUse",
       "id": "post:session-activity-tracker",
       "script": "scripts/hooks/session-activity-tracker.js",
-      "purpose": "Record per-session tool calls and file activity for XIAOZHI2 metrics.",
+      "purpose": "Record per-session tool calls and file activity for XIAOZHI metrics.",
       "blocking": false
     },
     {

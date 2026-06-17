@@ -41,7 +41,7 @@ Reason:
 | Claude plugin version | `2.0.0-rc.1` | `claude plugin validate .claude-plugin/plugin.json`; `claude plugin tag .claude-plugin --dry-run` | Validation passed on Claude Code `2.1.143`; dry run would create `xiaozhi--v2.0.0-rc.1` | Ready for release-tag gate |
 | Claude marketplace entry | `xiaozhi` | `.claude-plugin/marketplace.json`; `claude plugin marketplace add --help`; Anthropic plugin marketplace docs | Version and repo point at current rc.1 surface; GitHub, git URL, remote marketplace JSON, and local path marketplace sources are supported | Keep |
 | Codex plugin slug | `xiaozhi` | `node -p "require('./.codex-plugin/plugin.json').name"` | `xiaozhi` | Keep |
-| Codex plugin version | `2.0.0-rc.1` | `node tests/plugin-manifest.test.js`; `node tests/docs/xiaozhi2-release-surface.test.js` | Plugin manifest passed 54/54; release surface passed 21/21 on Codex CLI `0.131.0` | Ready for Codex marketplace/manual marketplace gate |
+| Codex plugin version | `2.0.0-rc.1` | `node tests/plugin-manifest.test.js`; `node tests/docs/xiaozhi-release-surface.test.js` | Plugin manifest passed 54/54; release surface passed 21/21 on Codex CLI `0.131.0` | Ready for Codex marketplace/manual marketplace gate |
 | Codex repo marketplace | `xiaozhi` | `.agents/plugins/marketplace.json`; `codex plugin marketplace add --help`; OpenAI Codex plugin docs | Repo marketplace add supports GitHub shorthand, Git URLs, SSH URLs, local roots, `--ref`, and `--sparse`; local and GitHub-ref temp-home add smokes passed | Use as rc.1 Codex distribution path |
 | OpenCode package | `xiaozhi-cli` | `node -p "require('./.opencode/package.json').name"` | `xiaozhi-cli` | Keep |
 | OpenCode build | Generated package output | `npm run build:opencode` | Passed | Ready for package dry-run gate |
@@ -127,7 +127,7 @@ context; ship plugin context through skills instead.
 claude plugin tag .claude-plugin --dry-run
 Would create and push tag xiaozhi--v2.0.0-rc.1.
 
-node tests/docs/xiaozhi2-release-surface.test.js
+node tests/docs/xiaozhi-release-surface.test.js
 21 release-surface checks passed.
 
 node tests/plugin-manifest.test.js

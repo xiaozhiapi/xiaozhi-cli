@@ -3031,7 +3031,7 @@ async fn spawn_session_runner_for_program(
 fn background_runner_stderr_log_path(working_dir: &Path, session_id: &str) -> PathBuf {
     working_dir
         .join(".claude")
-        .join("xiaozhi2")
+        .join("xiaozhi")
         .join("logs")
         .join(format!("{session_id}.runner-stderr.log"))
 }
@@ -4230,7 +4230,7 @@ mod tests {
     impl TestDir {
         fn new(label: &str) -> Result<Self> {
             let path =
-                std::env::temp_dir().join(format!("xiaozhi2-{}-{}", label, uuid::Uuid::new_v4()));
+                std::env::temp_dir().join(format!("xiaozhi-{}-{}", label, uuid::Uuid::new_v4()));
             fs::create_dir_all(&path)?;
             Ok(Self { path })
         }
@@ -5158,7 +5158,7 @@ mod tests {
             background_runner_stderr_log_path(Path::new("/tmp/ecc-repo"), "session-123");
         assert_eq!(
             path,
-            PathBuf::from("/tmp/ecc-repo/.claude/xiaozhi2/logs/session-123.runner-stderr.log")
+            PathBuf::from("/tmp/ecc-repo/.claude/xiaozhi/logs/session-123.runner-stderr.log")
         );
     }
 

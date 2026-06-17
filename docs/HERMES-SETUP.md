@@ -82,7 +82,7 @@ These stay local and should be configured per operator:
 
 ## Suggested Bring-Up Order
 
-0. Run `xiaozhi migrate audit --source ~/.hermes` first to inventory the legacy workspace and see which parts already map onto XIAOZHI2.
+0. Run `xiaozhi migrate audit --source ~/.hermes` first to inventory the legacy workspace and see which parts already map onto XIAOZHI.
 0.5. Plan and scaffold migration artifacts before importing anything:
    - generate reviewable plans with `xiaozhi migrate plan` and `xiaozhi migrate scaffold`
    - scaffold reusable legacy skills with `xiaozhi migrate import-skills --output-dir migration-artifacts/skills`

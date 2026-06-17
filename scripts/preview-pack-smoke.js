@@ -57,9 +57,9 @@ const REQUIRED_VERIFICATION_COMMANDS = [
   'npm run security:ioc-scan',
   'npm audit --audit-level=moderate',
   'npm audit signatures',
-  'node tests/docs/xiaozhi2-release-surface.test.js',
+  'node tests/docs/xiaozhi-release-surface.test.js',
   'node tests/run-all.js',
-  'cd xiaozhi2 && cargo test',
+  'cd xiaozhi && cargo test',
 ];
 
 const REQUIRED_PUBLICATION_BLOCKERS = [

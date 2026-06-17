@@ -58,7 +58,7 @@ Temporary install smoke:
 | Codex marketplace CLI | `codex plugin marketplace --help` and subcommand help | Supports `add`, `upgrade`, and `remove`; `add` supports repo and local marketplace roots |
 | OpenCode package | `npm run build:opencode` | Passed |
 | Claude hook/plugin route | `node tests/hooks/hooks.test.js` | Passed `236/236` |
-| Codex release surface | `node tests/docs/xiaozhi2-release-surface.test.js` | Passed `18/18` |
+| Codex release surface | `node tests/docs/xiaozhi-release-surface.test.js` | Passed `18/18` |
 | Agent/catalog metadata | `node tests/scripts/catalog.test.js` | Passed `7/7` |
 | Observability gate | `npm run observability:ready` | Passed `16/16` |
 

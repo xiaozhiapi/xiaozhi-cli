@@ -23,7 +23,7 @@ const COMMANDS = {
   },
   'control-pane': {
     script: 'control-pane.js',
-    description: 'Run the local XIAOZHI2 operator control pane',
+    description: 'Run the local XIAOZHI operator control pane',
   },
   'install-plan': {
     script: 'install-plan.js',

@@ -27,7 +27,7 @@ For the full-stack platform framing and product-integration loop, see
 | Hooks | `hooks/hooks.json`, `scripts/hooks/` | Claude native hooks, OpenCode plugin events, Cursor hook adapter | Hook-backed in Claude/OpenCode/Cursor; instruction-backed in Codex |
 | MCPs | `.mcp.json`, `mcp-configs/` | Native MCP config import per harness | Supported where the harness exposes MCP |
 | Commands | `commands/`, CLI scripts | Claude slash commands, compatibility shims, CLI entrypoints | Supported, but command semantics vary |
-| Sessions | `xiaozhi2/`, session adapters, orchestration scripts | TUI/daemon, tmux/worktree orchestration, harness-specific runners | Alpha |
+| Sessions | `xiaozhi/`, session adapters, orchestration scripts | TUI/daemon, tmux/worktree orchestration, harness-specific runners | Alpha |
 
 ## What Travels Unchanged
 
@@ -111,13 +111,13 @@ Supported today:
 - Codex plugin metadata and MCP reference config
 - OpenCode package/plugin surface
 - Cursor-adapted rules, hooks, and skills
-- `xiaozhi2/` as an alpha Rust control plane
+- `xiaozhi/` as an alpha Rust control plane
 
 Still maturing:
 
 - exact hook parity across all harnesses
 - automated skill sync into Hermes
-- release packaging for `xiaozhi2/`
+- release packaging for `xiaozhi/`
 - cross-harness session resume semantics
 - deeper memory and operator planning layers
 - the full platform loop where external products contribute skill packs,

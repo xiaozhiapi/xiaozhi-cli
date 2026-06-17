@@ -91,7 +91,7 @@
 * **运营与外向型工作流扩展** —— `brand-voice`、`social-graph-ranker`、`customer-billing-ops`、`google-workspace-ops` 等运营型 skill 已纳入同一系统。
 * **媒体与发布工具补齐** —— `manim-video`、`remotion-video-creation` 以及社媒发布能力让技术讲解和发布流程直接在同一仓库内完成。
 * **框架与产品表面继续扩展** —— `nestjs-patterns`、更完整的 Codex/OpenCode 安装表面，以及跨 harness 打包改进，让仓库不再局限于 Claude Code。
-* **XIAOZHI 2.0 alpha 已进入仓库** —— `xiaozhi2/` 下的 Rust 控制层现已可在本地构建，并提供 `dashboard`、`start`、`sessions`、`status`、`stop`、`resume` 与 `daemon` 命令。
+* **XIAOZHI 2.0 alpha 已进入仓库** —— `xiaozhi/` 下的 Rust 控制层现已可在本地构建，并提供 `dashboard`、`start`、`sessions`、`status`、`stop`、`resume` 与 `daemon` 命令。
 * **生态加固持续推进** —— AgentShield、XIAOZHI Tools 成本控制、计费门户工作与网站刷新仍围绕核心插件持续交付。
 
 ### v1.9.0 — 选择性安装与语言扩展 (2026年3月)

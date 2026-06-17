@@ -84,7 +84,7 @@ Tracked repositories in the platform audit and work-items sync were:
 | Package/plugin identity readback | `node -p "JSON.stringify({pkg, claude, codex, opencode}, null, 2)"` | `xiaozhi-cli@2.0.0-rc.1`; Claude plugin `xiaozhi@2.0.0-rc.1`; Codex plugin `xiaozhi@2.0.0-rc.1`; OpenCode package `xiaozhi-cli@2.0.0-rc.1` |
 | Name availability | `npm view xiaozhi name version description repository.url --json`; `npm view @xiaozhiapi/xiaozhi name version --json`; `npm view xiaozhi-cli name version dist-tags --json` | `xiaozhi` is occupied by unrelated `xiaozhi@0.0.2`; `@xiaozhiapi/xiaozhi` returns 404; `xiaozhi-cli` registry latest remains `1.10.0` with no `next` dist-tag |
 | Plugin manifest tests | `node tests/plugin-manifest.test.js` | 54 passed, 0 failed |
-| Release surface tests | `node tests/docs/xiaozhi2-release-surface.test.js` | 21 passed, 0 failed |
+| Release surface tests | `node tests/docs/xiaozhi-release-surface.test.js` | 21 passed, 0 failed |
 | Claude plugin validation | `claude plugin validate .claude-plugin/plugin.json`; `claude plugin validate .`; `claude plugin tag .claude-plugin --dry-run` | Claude Code `2.1.143`; manifest validation passed; full plugin validation passed with one expected root `CLAUDE.md` context warning; tag dry run would create `xiaozhi--v2.0.0-rc.1` |
 | Claude marketplace source help | `claude plugin marketplace add --help`; `claude plugin marketplace update --help` | Marketplace add supports URL, local path, GitHub repo, `--scope`, and `--sparse`; update supports targeted or all-marketplace refresh |
 | Codex marketplace help | `codex plugin marketplace add --help` | Codex CLI `0.131.0`; marketplace add supports local paths, `owner/repo[@ref]`, HTTPS Git URL, SSH Git URL, `--ref`, and `--sparse` |

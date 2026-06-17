@@ -70,7 +70,7 @@ Project documents added in Linear:
 | PR #1932 | Added `scripts/platform-audit.js` JSON/Markdown/file-output modes so queue, discussion, roadmap, and release evidence can be captured as a durable artifact instead of terminal-only output |
 | PR #1933 | Expanded home-scan IOC coverage to Claude `settings.local.json`, `.claude/hooks/hooks.json`, and user-level VS Code / Code Insiders `tasks.json` across macOS, Linux, and Windows |
 | PR #1934 | Switched ordinary CI dependency caches to restore-only `actions/cache/restore` usage so test jobs do not save mutable dependency state back into shared caches |
-| PR #1935 | Stabilized `xiaozhi2` current-directory-mutating tests with a test-only serialized current-dir guard, preserving the Rust release-surface gate under parallel test execution |
+| PR #1935 | Stabilized `xiaozhi` current-directory-mutating tests with a test-only serialized current-dir guard, preserving the Rust release-surface gate under parallel test execution |
 | PR #1940 | Added `.github/workflows/supply-chain-watch.yml`, scheduled every 6 hours, so the TanStack/Mini Shai-Hulud/node-ipc IOC scan and npm signature/audit checks produce a durable `supply-chain-ioc-report.json` artifact |
 | PR #1941 | Removed GitHub Actions dependency cache use from CI test workflows, disabled package-manager lifecycle scripts for npm/pnpm/Yarn/Bun installs, purged existing Actions caches, and added validator tests that reject unsafe install/cache patterns |
 | AgentShield PR #83 | Merged Mini Shai-Hulud IOC coverage for TanStack, Mistral, OpenSearch, Guardrails, UiPath, Squawk, Claude Code / VS Code persistence, and dead-man switch artifacts |
@@ -86,7 +86,7 @@ Project documents added in Linear:
 | IOC scan | `node scripts/ci/scan-supply-chain-iocs.js --root <XIAOZHI-workspace> --home` passed with 229 files inspected after the no-lifecycle install refresh |
 | npm registry verification | `npm audit signatures` verified 241 registry signatures and 30 attestations; `npm audit --audit-level=high` found 0 vulnerabilities |
 | Actions cache purge | `gh cache delete --all --succeed-on-no-caches` completed and `gh cache list --limit 20` returned no caches |
-| Rust release-surface gate | `cd xiaozhi2 && cargo test` passed 462/462 with the existing 14 dead-code/unused warnings |
+| Rust release-surface gate | `cd xiaozhi && cargo test` passed 462/462 with the existing 14 dead-code/unused warnings |
 | Root suite | `node tests/run-all.js` passed 2442/2442, 0 failed |
 | Repo sweeps | Targeted persistence path checks found no active `gh-token-monitor`, `pgsql-monitor`, `transformers.pyz`, or `pgmonitor.py` artifacts |
 

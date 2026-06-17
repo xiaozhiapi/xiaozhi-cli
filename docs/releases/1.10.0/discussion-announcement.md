@@ -24,7 +24,7 @@ This release also folds in the operator/media lane that has been growing around 
 
 And on the 2.0 side:
 
-XIAOZHI 2.0 is now **real as an alpha control-plane surface** in-tree under `xiaozhi2/`.
+XIAOZHI 2.0 is now **real as an alpha control-plane surface** in-tree under `xiaozhi/`.
 
 It builds today and exposes:
 

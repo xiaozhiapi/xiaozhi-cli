@@ -34,8 +34,8 @@ commit with a clean checkout before publishing.
 | Root suite | `node tests/run-all.js` | `2376` passed, `0` failed |
 | Markdown lint | `npx markdownlint-cli '**/*.md' --ignore node_modules` | Passed after normalizing two zh-CN CLAUDE docs from asterisk bullets to dash bullets |
 | Package surface | `node tests/scripts/npm-publish-surface.test.js` | Passed `2/2`; package surface still excludes Python bytecode/cache artifacts |
-| Release surface | `node tests/docs/xiaozhi2-release-surface.test.js` | Passed `18/18` |
-| Rust surface | `cd xiaozhi2 && cargo test` | Passed `462/462`; warnings only for unused functions/fields |
+| Release surface | `node tests/docs/xiaozhi-release-surface.test.js` | Passed `18/18` |
+| Rust surface | `cd xiaozhi && cargo test` | Passed `462/462`; warnings only for unused functions/fields |
 
 ## Security Gate Evidence
 

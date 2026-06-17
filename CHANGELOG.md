@@ -38,7 +38,7 @@
 - Updated package, plugin, marketplace, OpenCode, agent, and README metadata to `2.0.0-rc.1`.
 - Added `docs/releases/2.0.0-rc.1/` with release notes, social drafts, launch checklist, handoff notes, and demo prompts.
 - Added `docs/architecture/cross-harness.md` and regression coverage for the XIAOZHI/Hermes boundary.
-- Kept `xiaozhi2/` versioning independent for now; it remains an alpha control-plane scaffold unless release engineering decides otherwise.
+- Kept `xiaozhi/` versioning independent for now; it remains an alpha control-plane scaffold unless release engineering decides otherwise.
 
 ### Notes
 
@@ -52,7 +52,7 @@
 - Public release surface synced to the live repo after multiple weeks of OSS growth and backlog merges.
 - Operator workflow lane expanded with voice, graph-ranking, billing, workspace, and outbound skills.
 - Media generation lane expanded with Manim and Remotion-first launch tooling.
-- XIAOZHI 2.0 alpha control-plane binary now builds locally from `xiaozhi2/` and exposes the first usable CLI/TUI surface.
+- XIAOZHI 2.0 alpha control-plane binary now builds locally from `xiaozhi/` and exposes the first usable CLI/TUI surface.
 
 ### Release Surface
 
@@ -70,7 +70,7 @@
 
 ### XIAOZHI 2.0 Alpha
 
-- `cargo build --manifest-path xiaozhi2/Cargo.toml` passes on the repository baseline.
+- `cargo build --manifest-path xiaozhi/Cargo.toml` passes on the repository baseline.
 - `xiaozhi-tui` currently exposes `dashboard`, `start`, `sessions`, `status`, `stop`, `resume`, and `daemon`.
 - The alpha is real and usable for local experimentation, but the broader control-plane roadmap remains incomplete and should not be treated as GA.
 

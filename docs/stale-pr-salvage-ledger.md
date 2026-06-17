@@ -34,7 +34,7 @@ on fresh branches, and credit the source PR.
 | #1414 | F# rules, reviewer agent, and testing skill | Salvaged in #1770 with current install manifests, detection tests, and catalog wiring. |
 | #1429 | JoyCode install target | Salvaged in #1737 through the current JoyCode install target. |
 | #1467 | Scientific skills and OpenCode discovery work | Useful USPTO and gget pieces salvaged in #1740; stale generated claims were not copied. |
-| #1478 | HarmonyOS/ArkTS rules, resolver agent, and CLAUDE example | Salvaged in #1769 with current install wiring; stale `xiaozhi2` session/TUI edits were not carried. |
+| #1478 | HarmonyOS/ArkTS rules, resolver agent, and CLAUDE example | Salvaged in #1769 with current install wiring; stale `xiaozhi` session/TUI edits were not carried. |
 | #1493 | SessionStart context scoping | Salvaged in #1774 with current hook semantics and tests. |
 | #1498 | PRD planning flow | Salvaged in #1777. |
 | #1504 | Statusline/context monitor hooks | Salvaged in #1776 with current hook manifest structure and tests. |

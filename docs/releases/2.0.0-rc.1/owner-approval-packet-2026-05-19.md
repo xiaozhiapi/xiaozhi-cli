@@ -67,10 +67,10 @@ npm run observability:ready
 npm run security:ioc-scan
 npm audit --audit-level=moderate
 npm audit signatures
-node tests/docs/xiaozhi2-release-surface.test.js
+node tests/docs/xiaozhi-release-surface.test.js
 node tests/hooks/gateguard-fact-force.test.js
 node tests/run-all.js
-cd xiaozhi2 && cargo test
+cd xiaozhi && cargo test
 ```
 
 ## Approval Text

@@ -15,7 +15,7 @@ Claude Code remains a core target. Codex, OpenCode, Cursor, Gemini, and other ha
 - Added a Hermes import playbook for turning local operator patterns into publishable XIAOZHI skills.
 - Added Zed as a project-local planning/install target while keeping BYOK and OpenRouter secrets outside XIAOZHI-managed project files.
 - Added command-registry coverage, platform audit, discussion audit, operator dashboard, Linear progress readiness, and preview-pack smoke gates.
-- Added a local [observability readiness gate](../../architecture/observability-readiness.md) for loop status, session traces, harness audit, and XIAOZHI2 tool-risk logs.
+- Added a local [observability readiness gate](../../architecture/observability-readiness.md) for loop status, session traces, harness audit, and XIAOZHI tool-risk logs.
 - Added the public teaser [Itô prediction-market skill pack](ito-prediction-market-skill-pack.md)
   for read-only basket research, comparison, oracle-style market intelligence,
   and risk review. Live Itô API access remains gated and separate from XIAOZHI
@@ -106,7 +106,7 @@ What stays local:
    using any announcement links.
 6. Start with one workflow lane: engineering, research, content, or outreach.
 7. Import only sanitized operator patterns into XIAOZHI skills.
-8. Treat `xiaozhi2/` as an alpha control plane until release packaging and installer
+8. Treat `xiaozhi/` as an alpha control plane until release packaging and installer
    behavior is finalized.
 
 ## Publication State

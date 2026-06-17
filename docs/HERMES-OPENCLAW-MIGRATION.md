@@ -196,7 +196,7 @@ XIAOZHI 2.0 now ships a bounded migration audit entrypoint:
 - `xiaozhi migrate import-env --source ~/.hermes --dry-run`
 - `xiaozhi migrate import-memory --source ~/.hermes`
 
-Use that first to inventory the legacy workspace and map detected surfaces onto the current XIAOZHI2 scheduler, remote dispatch, memory graph, templates, and manual-translation lanes.
+Use that first to inventory the legacy workspace and map detected surfaces onto the current XIAOZHI scheduler, remote dispatch, memory graph, templates, and manual-translation lanes.
 
 ## What Still Belongs In Backlog
 

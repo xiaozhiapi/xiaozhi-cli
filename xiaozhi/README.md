@@ -1,6 +1,6 @@
 # XIAOZHI 2.0 Alpha
 
-`xiaozhi2/` is the current Rust-based XIAOZHI 2.0 control-plane scaffold.
+`xiaozhi/` is the current Rust-based XIAOZHI 2.0 control-plane scaffold.
 
 It is usable as an alpha for local experimentation, but it is **not** the finished XIAOZHI 2.0 product yet.
 
@@ -41,7 +41,7 @@ Open issue clusters for the broader roadmap live in the main repo issue tracker 
 From the repo root:
 
 ```bash
-cd xiaozhi2
+cd xiaozhi
 cargo run
 ```
 
@@ -73,7 +73,7 @@ cargo run -- daemon
 ## Validate
 
 ```bash
-cd xiaozhi2
+cd xiaozhi
 cargo test
 ```
 
@@ -90,7 +90,7 @@ The alpha is missing the higher-level operator surface that defines XIAOZHI 2.0:
 
 ## Repo Rule
 
-Do not market `xiaozhi2/` as done just because the scaffold builds.
+Do not market `xiaozhi/` as done just because the scaffold builds.
 
 The right framing is:
 

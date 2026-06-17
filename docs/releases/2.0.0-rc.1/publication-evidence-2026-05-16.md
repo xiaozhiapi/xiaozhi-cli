@@ -51,8 +51,8 @@ final release commit with a strictly clean checkout before publishing.
 | Gate | Command | Result |
 | --- | --- | --- |
 | Root suite | `npm test` | 2469 passed, 0 failed |
-| Rust `xiaozhi2` suite | `cd xiaozhi2 && cargo test` | 462 passed, 0 failed; existing dead-code/unused warnings only |
-| Release surface | `node tests/docs/xiaozhi2-release-surface.test.js` | 20 passed |
+| Rust `xiaozhi` suite | `cd xiaozhi && cargo test` | 462 passed, 0 failed; existing dead-code/unused warnings only |
+| Release surface | `node tests/docs/xiaozhi-release-surface.test.js` | 20 passed |
 | Harness adapters | `npm run harness:adapters -- --check` | PASS; 11 adapters |
 | Harness audit | `npm run harness:audit -- --format json` | 70/70, no top actions |
 | Observability readiness | `npm run observability:ready` | 21/21, ready yes |

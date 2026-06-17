@@ -37,7 +37,7 @@ node tests/run-all.js
 Expected result: every test passes with zero failures. For release-specific drift, run the focused check:
 
 ```bash
-node tests/docs/xiaozhi2-release-surface.test.js
+node tests/docs/xiaozhi-release-surface.test.js
 ```
 
 Then check the local observability surface:
@@ -47,7 +47,7 @@ npm run observability:ready
 ```
 
 This runs the [observability readiness gate](../../architecture/observability-readiness.md)
-for loop status, session traces, harness audit, and XIAOZHI2 tool-risk logs.
+for loop status, session traces, harness audit, and XIAOZHI tool-risk logs.
 
 ## First Skill
 

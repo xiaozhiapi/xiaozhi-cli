@@ -41,7 +41,7 @@ Shai-Hulud/TanStack campaign, rc.1 now includes IOC scanning, no-lifecycle CI
 installs, advisory-source refresh, npm audit/signature checks, and AI-tool
 persistence coverage.
 
-There is still more to harden before GA, especially around packaging, installers, and the `xiaozhi2/` control plane. But rc.1 is enough to show the shape clearly.
+There is still more to harden before GA, especially around packaging, installers, and the `xiaozhi/` control plane. But rc.1 is enough to show the shape clearly.
 
 The GitHub prerelease and npm `next` package are live now. Public publication
 still stays approval-gated for the plugin path, video URLs, final outbound URLs,

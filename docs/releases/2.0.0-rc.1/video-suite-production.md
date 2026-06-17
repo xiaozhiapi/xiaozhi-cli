@@ -17,7 +17,7 @@ The videos should prove that claim directly:
   GitHub Copilot, and terminal workflows;
 - reusable skills, rules, hooks, agents, MCP conventions, release gates, and
   operator workflows;
-- `xiaozhi2/` as the alpha control-plane/TUI direction, not the whole product;
+- `xiaozhi/` as the alpha control-plane/TUI direction, not the whole product;
 - AgentShield and supply-chain gates as the enterprise trust layer;
 - OSS stays free, with GitHub Sponsors, XIAOZHI Tools Pro, and consulting as the
   funding surface.
@@ -158,7 +158,7 @@ current on release day:
 | OpenCode package | package install and plugin banner |
 | XIAOZHI Tools Pro | billing/product page only after live readback confirms claims |
 | AgentShield | CLI output, policy category view, supply-chain gate |
-| `xiaozhi2/` | alpha control-plane/TUI surface with alpha framing |
+| `xiaozhi/` | alpha control-plane/TUI surface with alpha framing |
 
 If a surface is not live, use a local browser capture and label it as local or
 release-candidate proof. Do not claim marketplace, billing, or official

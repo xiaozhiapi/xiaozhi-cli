@@ -111,7 +111,7 @@ Tracked repositories in the platform audit were:
 
 | Gate | Command | Result |
 | --- | --- | --- |
-| Release-surface tests | `node tests/docs/xiaozhi2-release-surface.test.js` | 28 passed, 0 failed |
+| Release-surface tests | `node tests/docs/xiaozhi-release-surface.test.js` | 28 passed, 0 failed |
 | Preview-pack smoke | `npm run preview-pack:smoke -- --format json` | Ready true; digest `eebb8a66c33e`; 33 required artifacts; 5 passed, 0 failed |
 | Release approval gate | `npm run release:approval-gate -- --format json` | Expected blocked; digest `ef8f49f727b7`; 4 passed, 2 failed; owner decisions and live URL readbacks remain approval-gated |
 | Operator dashboard | `npm run operator:dashboard -- --write docs/releases/2.0.0-rc.1/operator-readiness-dashboard-2026-05-20.md` | Regenerated from the May 20 `main` baseline with platform audit ready true, 0 tracked PRs, 0 tracked issues, 0 discussion gaps, `$1,728/mo` current MRR, `$10,000/mo` target MRR, the release video suite marked current, Linear release-gate sync current, and top actions for plugin publication, notifications, outbound approval, AgentShield, and XIAOZHI Tools billing |

@@ -28,7 +28,7 @@ and most importantly:
 
 XIAOZHI 2.0 is no longer just roadmap talk.
 
-the `xiaozhi2/` control-plane alpha is in-tree, builds today, and already exposes:
+the `xiaozhi/` control-plane alpha is in-tree, builds today, and already exposes:
 
 - dashboard
 - start

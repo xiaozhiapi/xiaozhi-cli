@@ -13,7 +13,7 @@
 - Paket, plugin, marketplace, OpenCode, ajan ve README metadataları `2.0.0-rc.1` olarak güncellendi.
 - Sürüm notları, sosyal taslaklar, launch checklist, handoff notları ve demo prompt'ları `docs/releases/2.0.0-rc.1/` altında toplandı.
 - XIAOZHI/Hermes sınırı için `docs/architecture/cross-harness.md` ve regresyon kapsamı eklendi.
-- `xiaozhi2/` sürümlemesi bağımsız tutuldu; release engineering aksi karar vermedikçe alpha control-plane scaffold olarak kalır.
+- `xiaozhi/` sürümlemesi bağımsız tutuldu; release engineering aksi karar vermedikçe alpha control-plane scaffold olarak kalır.
 
 ### Notlar
 
@@ -27,7 +27,7 @@
 - Genel repo yüzeyi birkaç haftalık OSS büyümesi ve backlog merge'lerinden sonra canlı repo ile senkronize edildi.
 - Operatör iş akışı hattı voice, graph-ranking, billing, workspace ve outbound becerileriyle genişletildi.
 - Medya üretim hattı Manim ve Remotion odaklı launch araçlarıyla genişletildi.
-- XIAOZHI 2.0 alpha control-plane binary artık `xiaozhi2/` üzerinden yerelde build ediliyor ve ilk kullanılabilir CLI/TUI yüzeyini sunuyor.
+- XIAOZHI 2.0 alpha control-plane binary artık `xiaozhi/` üzerinden yerelde build ediliyor ve ilk kullanılabilir CLI/TUI yüzeyini sunuyor.
 
 ### Sürüm Yüzeyi
 

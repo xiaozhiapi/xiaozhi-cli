@@ -57,7 +57,7 @@ npm view xiaozhi name version description repository.url --json
 npm view @xiaozhiapi/xiaozhi name version --json
 npm view xiaozhi-cli name version dist-tags --json
 node tests/plugin-manifest.test.js
-node tests/docs/xiaozhi2-release-surface.test.js
+node tests/docs/xiaozhi-release-surface.test.js
 claude plugin validate .claude-plugin/plugin.json
 claude plugin tag .claude-plugin --dry-run
 codex plugin marketplace add --help
@@ -79,7 +79,7 @@ keep the related publication action blocked.
 | --- | --- | --- | --- |
 | 1 | Freeze name and version | Package, Claude plugin, Codex plugin, OpenCode package, `VERSION`, and release docs all say `2.0.0-rc.1` | Any `preview`/`rc.1` mismatch |
 | 2 | Verify clean release branch | `git status --short --branch` shows only the intended release commit and no unrelated drift | Any unexplained dirty file |
-| 3 | Verify package and plugin manifests | `node tests/plugin-manifest.test.js` and `node tests/docs/xiaozhi2-release-surface.test.js` pass | Manifest or release-surface failure |
+| 3 | Verify package and plugin manifests | `node tests/plugin-manifest.test.js` and `node tests/docs/xiaozhi-release-surface.test.js` pass | Manifest or release-surface failure |
 | 4 | Dry-run package surface | `npm pack --dry-run --json`; `npm publish --tag next --dry-run` | Missing files, wrong dist-tag, or publish dry-run failure |
 | 5 | Dry-run Claude distribution | `claude plugin validate`; `claude plugin tag .claude-plugin --dry-run`; marketplace source/help evidence | Validation, tag, or install-smoke failure |
 | 6 | Verify Codex repo marketplace | `codex plugin marketplace add --help`; temp-home local and GitHub-ref repo marketplace add smoke; OpenAI official directory status recorded | Missing repo marketplace or unverified official-directory status |

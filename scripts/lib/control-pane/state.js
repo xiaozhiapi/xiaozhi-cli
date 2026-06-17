@@ -17,7 +17,7 @@ function homeDir(env = process.env) {
 }
 
 function defaultDbPath(env = process.env) {
-  return path.join(homeDir(env), '.claude', 'xiaozhi2.db');
+  return path.join(homeDir(env), '.claude', 'xiaozhi.db');
 }
 
 function defaultStateDbPath(env = process.env) {
@@ -27,15 +27,15 @@ function defaultStateDbPath(env = process.env) {
 function defaultConfigPaths(cwd = process.cwd(), env = process.env) {
   const home = homeDir(env);
   const paths = [
-    path.join(home, 'Library', 'Application Support', 'xiaozhi2', 'config.toml'),
-    path.join(home, '.config', 'xiaozhi2', 'config.toml'),
-    path.join(home, '.claude', 'xiaozhi2.toml'),
+    path.join(home, 'Library', 'Application Support', 'xiaozhi', 'config.toml'),
+    path.join(home, '.config', 'xiaozhi', 'config.toml'),
+    path.join(home, '.claude', 'xiaozhi.toml'),
   ];
 
   let current = path.resolve(cwd);
   while (current && current !== path.dirname(current)) {
-    paths.push(path.join(current, '.claude', 'xiaozhi2.toml'));
-    paths.push(path.join(current, 'xiaozhi2.toml'));
+    paths.push(path.join(current, '.claude', 'xiaozhi.toml'));
+    paths.push(path.join(current, 'xiaozhi.toml'));
     current = path.dirname(current);
   }
 
@@ -122,7 +122,7 @@ function resolveControlPaneConfig(options = {}) {
   return {
     ...normalizeConfig(merged, {
       env,
-      dbPath: options.dbPath || env.XIAOZHI2_DB_PATH || null,
+      dbPath: options.dbPath || env.XIAOZHI_DB_PATH || null,
       stateDbPath: options.stateDbPath || env.XIAOZHI_STATE_DB_PATH || null,
     }),
     configPaths: configPaths.filter(configPath => fs.existsSync(configPath)),

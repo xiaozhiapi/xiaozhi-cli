@@ -33,7 +33,7 @@ async function main(argv = process.argv) {
   await app.listen();
 
   console.log(`XIAOZHI Control Pane: ${app.url}`);
-  console.log(`XIAOZHI2 database: ${app.config.dbPath}`);
+  console.log(`XIAOZHI database: ${app.config.dbPath}`);
   console.log(`XIAOZHI state database: ${app.config.stateDbPath}`);
   console.log(args.allowActions ? 'Actions: enabled for local allowlist' : 'Actions: read-only');
 

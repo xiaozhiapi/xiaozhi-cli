@@ -1,5 +1,5 @@
 /**
- * Tests for allowlisted XIAOZHI2 control-pane actions.
+ * Tests for allowlisted XIAOZHI control-pane actions.
  */
 
 const assert = require('assert');
@@ -29,7 +29,7 @@ function runTests() {
   let passed = 0;
   let failed = 0;
 
-  if (test('builds copyable and executable allowlisted XIAOZHI2 actions', () => {
+  if (test('builds copyable and executable allowlisted XIAOZHI actions', () => {
     const repoRoot = path.join(__dirname, '..', '..');
     const actions = buildControlPaneActions({
       repoRoot,
@@ -55,7 +55,7 @@ function runTests() {
       '--limit',
       '25',
     ]);
-    assert.strictEqual(sync.cwd, path.join(repoRoot, 'xiaozhi2'));
+    assert.strictEqual(sync.cwd, path.join(repoRoot, 'xiaozhi'));
     assert.ok(sync.commandLine.includes('connector-sync'));
   })) passed++; else failed++;
 

@@ -305,7 +305,7 @@ mod tests {
     use std::path::PathBuf;
 
     fn test_db_path() -> PathBuf {
-        std::env::temp_dir().join(format!("xiaozhi2-observability-{}.db", uuid::Uuid::new_v4()))
+        std::env::temp_dir().join(format!("xiaozhi-observability-{}.db", uuid::Uuid::new_v4()))
     }
 
     fn test_session(id: &str) -> Session {

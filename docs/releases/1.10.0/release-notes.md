@@ -30,8 +30,8 @@ XIAOZHI 2.0 is **real and usable as an alpha**, but it is **not general-availabi
 
 What exists today:
 
-- `xiaozhi2/` Rust control-plane codebase in the main repo
-- `cargo build --manifest-path xiaozhi2/Cargo.toml` passes
+- `xiaozhi/` Rust control-plane codebase in the main repo
+- `cargo build --manifest-path xiaozhi/Cargo.toml` passes
 - `xiaozhi-tui` commands currently available:
   - `dashboard`
   - `start`
