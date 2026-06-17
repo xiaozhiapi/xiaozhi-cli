@@ -1,0 +1,47 @@
+{
+  "name": "xiaozhi",
+  "owner": {
+    "name": "Affaan Mustafa",
+    "email": "me@affaanmustafa.com"
+  },
+  "metadata": {
+    "description": "Harness-native XIAOZHI skills, hooks, rules, MCP conventions, and operator workflows"
+  },
+  "plugins": [
+    {
+      "name": "xiaozhi",
+      "source": "./",
+      "description": "Harness-native XIAOZHI operator layer - 67 agents, 271 skills, 92 legacy command shims, reusable hooks, rules, selective install profiles, and production-ready workflows for Claude Code, Codex, OpenCode, Cursor, and related agent harnesses",
+      "version": "2.0.0",
+      "author": {
+        "name": "Affaan Mustafa",
+        "email": "me@affaanmustafa.com"
+      },
+      "homepage": "https://github.com/xiaozhiapi/xiaozhi-cli",
+      "repository": "https://github.com/xiaozhiapi/xiaozhi-cli",
+      "license": "MIT",
+      "keywords": [
+        "agents",
+        "skills",
+        "hooks",
+        "commands",
+        "tdd",
+        "code-review",
+        "security",
+        "best-practices"
+      ],
+      "category": "workflow",
+      "tags": [
+        "agents",
+        "skills",
+        "hooks",
+        "commands",
+        "tdd",
+        "code-review",
+        "security",
+        "best-practices"
+      ],
+      "strict": false
+    }
+  ]
+}

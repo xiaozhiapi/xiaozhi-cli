@@ -1,0 +1,21 @@
+{
+  "name": "xiaozhi",
+  "interface": {
+    "displayName": "XIAOZHI"
+  },
+  "plugins": [
+    {
+      "name": "xiaozhi",
+      "version": "2.0.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/xiaozhi"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

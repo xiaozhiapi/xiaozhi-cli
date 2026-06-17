@@ -1,0 +1,15 @@
+xiaozhi-cli
+===========
+
+This project is a derivative work (fork + rebrand) of:
+
+  ECC — https://github.com/affaan-m/ECC
+  Copyright (c) 2026 Affaan Mustafa
+  Licensed under the MIT License.
+
+The original MIT License is retained in the LICENSE file and applies to this
+project. "xiaozhi-cli" / "小智 CLI" is an independent rebrand and is not
+affiliated with, endorsed by, or sponsored by the upstream ECC project.
+
+Upstream-specific resources (website, badge endpoints, GitHub App, sponsorship
+program) are NOT part of this project and have been removed.
